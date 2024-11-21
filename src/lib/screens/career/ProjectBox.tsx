@@ -9,7 +9,7 @@ const ProjectBox = () => {
       <div className="flex flex-col gap-y-6">
         <ProjectCard
           title="Notes API"
-          image="/notes-api.png"
+          image="/assets/notes-api.png"
           description="Introducing a Node.js-based API that simplifies the management of notes for users. 
           Synonymous with the backend of a note-taking application, users can perform create, read, 
           update, and delete (CRUD) operations on notes. This API serves as an alternative to building 
@@ -29,7 +29,7 @@ const ProjectBox = () => {
         />
         <ProjectCard
           title="Watch Out"
-          image="/weather-app.png"
+          image="/assets/weather-app.png"
           description="This project is a simple, yet functional web application that provides users with the 
           current weather conditions of their location, as well as the ability to search for weather conditions 
           in other areas. Powered by OpenWeatherMap API and the GeoLocation API, this project delivers accurate 
@@ -46,7 +46,7 @@ const ProjectBox = () => {
         />
         <ProjectCard
           title="Duplicate Remover"
-          image="/duplicate-remover.png"
+          image="/assets/duplicate-remover.png"
           description="In my journey to join HouswareHQ through Github's octernship program, I designed and 
           developed a duplicate character remover application using React, meeting one of the application 
           requirements. While it was not ultimately accepted, this project served as an opportunity for me 
@@ -59,7 +59,7 @@ const ProjectBox = () => {
         />
         <ProjectCard
           title="CGPA Calculator"
-          image="/cgpa-calculator.png"
+          image="/assets/cgpa-calculator.png"
           description="Calculating your Cumulative Grade Point Average (CGPA) is now easier than ever with my Angular 
           and TypeScript-based CGPA Calculator. Designed with students in mind, this intuitive tool allows you to quickly 
           and accurately estimate your CGPA by inputting your grades and credit hours. Save valuable time and effort as you 

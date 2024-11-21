@@ -14,7 +14,7 @@ export default function Home() {
           <ExperienceBox />
         </div>
         <Image
-          src="/divider.png"
+          src="/assets/divider.png"
           width={320}
           height={32}
           alt="Divider"

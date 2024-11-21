@@ -15,7 +15,7 @@ const ExperienceBox = () => {
           startDate="November, 2023"
           endDate="Present"
           position="Software Developer (Mobile)"
-          logo="/smarg-logo.png"
+          logo="/assets/smarg-logo.png"
           link="https://usesmarg.com"
           company="Smarg"
           description="
@@ -33,14 +33,14 @@ const ExperienceBox = () => {
             "React Native",
             "RabbitMQ",
             "Zustand",
-            "TamaGui",
+            "TamaGUI",
           ]}
         />
         <ExperienceCard
           startDate="June, 2023"
           endDate="January, 2024"
           position="Software Developer (Mobile)"
-          logo="/cotrust-logo.jpeg"
+          logo="/assets/cotrust-logo.jpeg"
           company="Cotrust Equity"
           link="https://cotruste.com"
           description="
@@ -61,7 +61,7 @@ const ExperienceBox = () => {
           startDate="March, 2023"
           endDate="June, 2023"
           position="Frontend Developer (Internship)"
-          logo="/sentinel-logo.jpeg"
+          logo="/assets/sentinel-logo.jpeg"
           company="Sentinel"
           link="https://usesentinel.app"
           description="
@@ -83,7 +83,7 @@ const ExperienceBox = () => {
           startDate="June, 2022"
           endDate="July, 2022"
           position="Software Developer (Web)"
-          logo="/kolat-logo.png"
+          logo="/assets/kolat-logo.png"
           company="Kolat OAKS Logistics"
           link="https://www.google.com/search?q=kolatlogistics"
           description="
