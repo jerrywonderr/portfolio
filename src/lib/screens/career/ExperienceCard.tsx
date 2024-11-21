@@ -41,7 +41,7 @@ const ExperienceCard = ({
               width={12}
               height={12}
               className="h-5 w-5 object-contain rounded-md  bg-red-900"
-              alt="Headshot image of Jeremiah Joseph jerrywonderr"
+              alt={`${company}'s logo`}
             />
             <a target="_blank" href={link} className="text-md">
               {company}

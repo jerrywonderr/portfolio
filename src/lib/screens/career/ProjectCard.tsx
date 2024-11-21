@@ -45,7 +45,7 @@ const ProjectCard = ({
           width={320}
           height={320}
           className="h-48 w-full object-cover mx-auto"
-          alt="Headshot image of Jeremiah Joseph jerrywonderr"
+          alt={`${title} made by Jeremiah Joseph (jerrywonderr)`}
         />
       </div>
     </div>

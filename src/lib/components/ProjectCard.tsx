@@ -12,7 +12,7 @@ const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
       <div className="basis-2/5">
         <Image
           src={imageSrc}
-          alt={`Display image for ${title} by Jeremiah Joseph`}
+          alt={`${title} (jerrywonderr)`}
           width={640}
           height={480}
           className="h-40 sm:h-48 object-cover"
