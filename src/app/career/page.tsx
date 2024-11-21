@@ -1,36 +1,28 @@
 "use client";
 
-import { PrimaryButton } from "@/lib/components/Button";
 import DottedScreen from "@/lib/components/DottedScreen";
-import HeadShot from "@/lib/screens/home/HeadShot";
-import ProjectCards from "@/lib/screens/home/ProjectCards";
-import Socials from "@/lib/screens/home/Socials";
-import Link from "next/link";
+import ExperienceBox from "@/lib/screens/career/ExperienceBox";
+import ProjectBox from "@/lib/screens/career/ProjectBox";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <DottedScreen>
-      <div className="flex flex-col my-12">
-        <div className="flex flex-col gap-1">
-          <h1 className="font-sans text-3xl sm:text-6xl text-center">
-            Jeremiah Joseph
-          </h1>
-          <p className="font-mono text-center text-md sm:text-lg">
-            Software Engineer & Tech Leader
-          </p>
+      <div></div>
+      <div className="flex flex-col max-w-screen-lg mx-auto">
+        <div className="">
+          <ExperienceBox />
         </div>
-        <div className="flex flex-col gap-8 my-16 justify-center">
-          <Socials />
-          <HeadShot />
-          <div className="mx-auto">
-            <Link href="/career">
-              <PrimaryButton showIcon>See Career Highlights</PrimaryButton>
-            </Link>
-          </div>
+        <Image
+          src="/divider.png"
+          width={320}
+          height={32}
+          alt="Divider"
+          className="w-full h-12 object-cover my-3"
+        />
+        <div>
+          <ProjectBox />
         </div>
-      </div>
-      <div>
-        <ProjectCards />
       </div>
     </DottedScreen>
   );
