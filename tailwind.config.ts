@@ -13,6 +13,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cardBackgroundDark: "#424242",
       },
       fontFamily: {
         sans: ["var(--font-cabin-sketch)"],

@@ -24,9 +24,9 @@ const ExperienceCard = ({
   link = "#",
 }: IExperienceCard) => {
   return (
-    <div className="bg-white p-4 shadow-md flex flex-col sm:flex-row">
+    <div className="bg-white dark:bg-cardBackgroundDark  p-4 shadow-md flex flex-col sm:flex-row">
       <div className="sm:min-w-52">
-        <div className="text-slate-600 text-sm">
+        <div className="text-slate-600 dark:text-gray-400  text-sm">
           {startDate} - {endDate}
         </div>
       </div>

@@ -19,7 +19,7 @@ const ProjectCard = ({
   link,
 }: IProjectCardProps) => {
   return (
-    <div className="flex flex-col bg-white p-4 shadow-md sm:flex-row-reverse sm:gap-x-6">
+    <div className="flex flex-col bg-white dark:bg-cardBackgroundDark  p-4 shadow-md sm:flex-row-reverse sm:gap-x-6">
       <div>
         <div className="group flex gap-x-2 hover:cursor-pointer">
           <a href={link} target="_blank" className="text-xl group-hover">
