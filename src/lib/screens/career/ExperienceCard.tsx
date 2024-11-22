@@ -1,3 +1,4 @@
+import prepImagePath from "@/lib/utils/prep-image-path";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { RiArrowRightUpFill } from "react-icons/ri";
@@ -41,7 +42,7 @@ const ExperienceCard = ({
           </div>
           <div className="group flex gap-x-2 hover:cursor-pointer">
             <Image
-              src={logo}
+              src={prepImagePath(logo)}
               width={12}
               height={12}
               className="h-5 w-5 object-contain rounded-md  bg-red-900"

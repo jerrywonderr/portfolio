@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import prepImagePath from "../utils/prep-image-path";
 
 interface IProjectCardProps {
   imageSrc: string;
@@ -15,7 +16,7 @@ const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
     >
       <div className="basis-2/5">
         <Image
-          src={imageSrc}
+          src={prepImagePath(imageSrc)}
           alt={`${title} (jerrywonderr)`}
           width={640}
           height={480}

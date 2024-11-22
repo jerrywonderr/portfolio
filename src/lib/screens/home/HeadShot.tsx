@@ -1,10 +1,11 @@
+import prepImagePath from "@/lib/utils/prep-image-path";
 import Image from "next/image";
 
 const HeadShot = () => {
   return (
     <div>
       <Image
-        src="/assets/headshot.jpeg"
+        src={prepImagePath("/assets/headshot.jpeg")}
         width={320}
         height={320}
         className="rounded-full h-32 w-32 mx-auto"

@@ -1,3 +1,4 @@
+import prepImagePath from "@/lib/utils/prep-image-path";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { RiArrowRightUpFill } from "react-icons/ri";
@@ -72,7 +73,7 @@ const ProjectCard = ({
         className="sm:min-w-60"
       >
         <Image
-          src={image}
+          src={prepImagePath(image)}
           width={320}
           height={320}
           className="h-48 w-full object-cover mx-auto"

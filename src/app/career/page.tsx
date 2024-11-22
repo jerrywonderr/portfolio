@@ -3,6 +3,7 @@
 import DottedScreen from "@/lib/components/DottedScreen";
 import ExperienceBox from "@/lib/screens/career/ExperienceBox";
 import ProjectBox from "@/lib/screens/career/ProjectBox";
+import prepImagePath from "@/lib/utils/prep-image-path";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
           <ExperienceBox />
         </div>
         <Image
-          src="/assets/divider.png"
+          src={prepImagePath("/assets/divider.png")}
           width={320}
           height={32}
           alt="Divider"
