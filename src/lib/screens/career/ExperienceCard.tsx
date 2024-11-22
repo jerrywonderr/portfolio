@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { RiArrowRightUpFill } from "react-icons/ri";
 import Tag from "./Tag";
@@ -24,7 +25,10 @@ const ExperienceCard = ({
   link = "#",
 }: IExperienceCard) => {
   return (
-    <div className="bg-white dark:bg-cardBackgroundDark  p-4 shadow-md flex flex-col sm:flex-row">
+    <motion.div
+      whileInView={{ scale: [0.8, 1], transition: { duration: 0.8 } }}
+      className="bg-white dark:bg-cardBackgroundDark  p-4 shadow-md flex flex-col sm:flex-row"
+    >
       <div className="sm:min-w-52">
         <div className="text-slate-600 dark:text-gray-400  text-sm">
           {startDate} - {endDate}
@@ -57,14 +61,25 @@ const ExperienceCard = ({
         </div>
         <div className="my-3">
           <h4 className="font-mono text-sm mb-3">Technologies Used:</h4>
-          <div className="flex flex-wrap gap-x-2 gap-y-2 align-middle">
+          <motion.div
+            whileInView={{
+              opacity: [0, 1],
+              transition: {
+                duration: 0.8,
+                staggerChildren: 3,
+                delayChildren: 0.5,
+                beforeChildren: true,
+              },
+            }}
+            className="flex flex-wrap gap-x-2 gap-y-2 align-middle"
+          >
             {tags.map((tag, index) => (
               <Tag key={index}>{tag}</Tag>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

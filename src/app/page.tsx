@@ -1,6 +1,6 @@
 "use client";
 
-import { PrimaryButton } from "@/lib/components/Button";
+import { PulsatingPrimaryButton } from "@/lib/components/Button";
 import DottedScreen from "@/lib/components/DottedScreen";
 import HeadShot from "@/lib/screens/home/HeadShot";
 import ProjectCards from "@/lib/screens/home/ProjectCards";
@@ -23,15 +23,100 @@ export default function Home() {
           <Socials />
           <HeadShot />
           <div className="mx-auto">
-            <Link href="/career">
+            {/* <motion.div
+              whileInView={{
+                scale: [1, 1.5, 1],
+                // transition: {
+                //   type: "spring",
+                //   duration: 2,
+                //   repeat: Infinity,
+                //   repeatDelay: 3,
+                // },
+              }}
+              transition={{
+                type: "spring",
+                duration: 5,
+                repeat: Infinity,
+                repeatDelay: 3,
+              }}
+            > */}
+            {/* <Link href="/career">
               <PrimaryButton showIcon>See Career Highlights</PrimaryButton>
+            </Link> */}
+            {/* </motion.div> */}
+            <Link href="/career">
+              <PulsatingPrimaryButton showIcon>
+                See Career Highlights
+              </PulsatingPrimaryButton>
             </Link>
+            {/* <PulsatingPrimaryButton>kjsdk</PulsatingPrimaryButton> */}
           </div>
         </div>
       </div>
       <div>
         <ProjectCards />
       </div>
+
+      {/* <motion.ul
+        animate={{ x: 100 }}
+        transition={{ repeat: Infinity, duration: 5 }}
+        className="w-48 h-48 bg-teal-500 "
+      />
+
+      <motion.button
+        whileInView={{
+          scale: [1, 1.5, 1],
+          transition: { repeat: Infinity, duration: 5 },
+        }}
+        // transition={{ repeat: Infinity, duration: 5 }}
+        className="w-48 h-48 bg-teal-500 "
+      >
+        preess mee
+      </motion.button>
+      <motion.div
+        whileInView={{
+          scale: [1, 1.5, 1],
+          // transition: {
+          //   type: "spring",
+          //   duration: 2,
+          //   repeat: Infinity,
+          //   repeatDelay: 3,
+          // },
+        }}
+        transition={{
+          type: "spring",
+          duration: 5,
+          repeat: Infinity,
+          repeatDelay: 3,
+        }}
+      >
+        <PrimaryButtonLink>kjsdk</PrimaryButtonLink>
+      </motion.div>
+
+      <motion.button
+        whileInView={{
+          scale: [1, 1.5, 1],
+          transition: { repeat: Infinity, duration: 5 },
+        }}
+        // whileInView={{
+        //   scale: [1, 1.3, 1],
+        //   transition: {
+        //     type: "spring",
+        //     duration: 2,
+        //     // stiffness: 30,
+        //     // damping: 1,
+        //     repeat: Infinity,
+        //     // repeatType: "reverse",
+        //   },
+        // }}
+        // whileTap={{
+        //   opacity: [1, 0.6, 0.8, 1],
+        //   transition: { repeat: Infinity, duration: 5 },
+        // }}
+        // className={`group bg-black dark:bg-white text-white dark:text-black px-4 py-3 rounded-md flex align-baseline gap-x-2 ${extraClass}`}
+      >
+        dgsfhrdthd
+      </motion.button> */}
     </DottedScreen>
   );
 }

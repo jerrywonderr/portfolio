@@ -4,7 +4,7 @@ const HeadShot = () => {
   return (
     <div>
       <Image
-        src="/headshot.jpeg"
+        src="/assets/headshot.jpeg"
         width={320}
         height={320}
         className="rounded-full h-32 w-32 mx-auto"

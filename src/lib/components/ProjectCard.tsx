@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface IProjectCardProps {
@@ -8,7 +9,10 @@ interface IProjectCardProps {
 
 const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
   return (
-    <div className="flex flex-row-reverse sm:flex-col bg-white dark:bg-cardBackgroundDark shadow-md w-full sm:max-w-64">
+    <motion.div
+      className="flex flex-row-reverse sm:flex-col bg-white dark:bg-cardBackgroundDark shadow-md w-full sm:max-w-64"
+      whileInView={{ x: [-100, 0], transition: { duration: 2 } }}
+    >
       <div className="basis-2/5">
         <Image
           src={imageSrc}
@@ -24,7 +28,7 @@ const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

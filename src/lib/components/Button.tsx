@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FiPlay } from "react-icons/fi";
 
 interface IButton {
@@ -19,14 +20,41 @@ export const PrimaryButton = ({
       {showIcon && (
         <FiPlay
           size={20}
-          className="text-white dark:text-black group-hover:text-black dark:group-hover:text-white group-hover:translate-x-2 transition-all"
+          className="text-white group-hover:text-black group-hover:translate-x-2 transition-all"
         />
       )}
     </button>
   );
 };
 
-//drive.google.com/file/d/1IuAs45Hu0ZBXW_HXTgqgTAnx0f2nC0Nc/view?usp=drive_link
+export const PulsatingPrimaryButton = ({
+  children,
+  extraClass,
+  showIcon = false,
+}: IButton) => {
+  return (
+    <motion.div
+      whileInView={{
+        scale: [1, 1.3, 1],
+        transition: {
+          duration: 2,
+          stiffness: 30,
+          damping: 10,
+          repeat: Infinity,
+          repeatType: "reverse",
+        },
+      }}
+      // whileTap={{
+      //   opacity: [1, 0.6, 0.8, 1],
+      //   transition: { repeat: Infinity, duration: 5 },
+      // }}
+      className={`group bg-black dark:bg-white text-white dark:text-black px-4 py-3 rounded-md flex align-baseline gap-x-2 ${extraClass}`}
+    >
+      {children}
+      {showIcon && <FiPlay size={20} className="text-white dark:text-black" />}
+    </motion.div>
+  );
+};
 
 export const PrimaryButtonLink = ({
   children,
