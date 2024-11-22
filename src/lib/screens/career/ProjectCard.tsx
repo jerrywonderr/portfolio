@@ -59,7 +59,7 @@ const ProjectCard = ({
       </div>
       <motion.div
         whileInView={{
-          scale: [1, 0.8, 1],
+          scale: [0.8, 1],
           // rotate: ["0deg", "30deg", "-30deg", "0deg"],
           transition: {
             // ease: "circIn",
