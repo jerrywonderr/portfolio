@@ -10,6 +10,7 @@ const HeadShot = () => {
         height={320}
         className="rounded-full h-32 w-32 mx-auto"
         alt="Headshot image of Jeremiah Joseph jerrywonderr"
+        priority
       />
     </div>
   );

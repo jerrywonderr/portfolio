@@ -21,6 +21,7 @@ const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
           width={640}
           height={480}
           className="h-40 sm:h-48 object-cover"
+          priority
         />
       </div>
       <div className="flex flex-col p-4 basis-3/5 sm:w-full">
