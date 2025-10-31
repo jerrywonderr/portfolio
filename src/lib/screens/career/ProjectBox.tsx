@@ -4,7 +4,9 @@ const ProjectBox = () => {
   return (
     <div className="mb-6">
       <div>
-        <h4 className="text-2xl mb-3 sm:text-3xl">My Projects</h4>
+        <h4 className="text-2xl mb-3 sm:text-3xl text-foreground">
+          My Projects
+        </h4>
       </div>
       <div className="flex flex-col gap-y-6">
         <ProjectCard

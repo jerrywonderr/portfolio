@@ -1,5 +1,4 @@
 import ProjectCard from "@/lib/components/ProjectCard";
-import { motion } from "framer-motion";
 
 interface IProject {
   id: number;
@@ -31,13 +30,7 @@ const projects: IProject[] = [
 
 const ProjectCards = () => {
   return (
-    <motion.div
-      whileInView={{
-        opacity: [0, 1],
-        transition: { duration: 0.8, staggerChildren: 3, delayChildren: 9 },
-      }}
-      className="flex flex-col sm:flex-row gap-x-6 gap-y-6 justify-center mb-6"
-    >
+    <div className="mx-auto mb-6 max-w-6xl grid [grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))] gap-6 justify-center px-4">
       {projects.map(({ title, id, imageSrc, description }) => (
         <ProjectCard
           key={id}
@@ -46,7 +39,7 @@ const ProjectCards = () => {
           description={description}
         />
       ))}
-    </motion.div>
+    </div>
   );
 };
 

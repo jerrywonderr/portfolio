@@ -1,7 +1,7 @@
+import ThemeToggle from "@/lib/components/ThemeToggle";
 import type { Metadata } from "next";
 import { Cabin_Sketch } from "next/font/google";
 import localFont from "next/font/local";
-import Head from "next/head";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "Jeremiah's Portfolio",
   description: "Portfolio for Jeremiah Joseph (jerrywonderr)",
 };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 const cabin = Cabin_Sketch({
   weight: ["400", "700"],
@@ -36,17 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta charSet="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <body
         className={` ${geistMono.variable}  ${geistSans.variable} ${cabin.className} antialiased`}
       >
+        <ThemeToggle />
         {children}
-        <div className="flex justify-center items-center p-6 bg-black">
-          <p className="text-white text-center">
+        <div className="flex justify-center items-center p-6 bg-primary">
+          <p className="text-primaryForeground text-center">
             Designed and developed by Jeremiah Joseph using Next.js and
             TailwindCSS.
           </p>

@@ -27,18 +27,19 @@ const ExperienceCard = ({
 }: IExperienceCard) => {
   return (
     <motion.div
-      whileInView={{ scale: [0.8, 1], transition: { duration: 0.8 } }}
-      className="bg-white dark:bg-cardBackgroundDark  p-4 shadow-md flex flex-col sm:flex-row"
+      whileInView={{ scale: [0.98, 1], transition: { duration: 0.3 } }}
+      className="relative bg-card border border-border rounded-lg p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition flex flex-col sm:flex-row ml-6"
     >
+      <span className="absolute -left-6 top-6 h-3 w-3 rounded-full bg-primary ring-4 ring-card" />
       <div className="sm:min-w-52">
-        <div className="text-slate-600 dark:text-gray-400  text-sm">
+        <div className="text-foreground/60 text-xs sm:text-sm bg-muted rounded-full inline-block px-3 py-1">
           {startDate} - {endDate}
         </div>
       </div>
       <div>
         <div className="flex flex-col gap-1">
           <div>
-            <p className="text-xl">{position}</p>
+            <p className="text-xl font-medium text-foreground">{position}</p>
           </div>
           <div className="group flex gap-x-2 hover:cursor-pointer">
             <Image
@@ -48,7 +49,11 @@ const ExperienceCard = ({
               className="h-5 w-5 object-contain rounded-md  bg-red-900"
               alt={`${company}'s logo`}
             />
-            <a target="_blank" href={link} className="text-md">
+            <a
+              target="_blank"
+              href={link}
+              className="text-md text-foreground hover:underline"
+            >
               {company}
             </a>
             <RiArrowRightUpFill
@@ -57,7 +62,9 @@ const ExperienceCard = ({
             />
           </div>
           <div>
-            <p className="text-sm text-justify">{description}</p>
+            <p className="text-sm text-foreground/70 text-justify">
+              {description}
+            </p>
           </div>
         </div>
         <div className="my-3">

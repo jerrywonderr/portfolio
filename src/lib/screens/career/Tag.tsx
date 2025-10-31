@@ -18,7 +18,7 @@ const Tag = ({ children }: ITag) => {
       // transition={{ duration: 3 }}
       className="inline-block"
     >
-      <p className="text-xs bg-black text-white rounded-xl px-3 py-1">
+      <p className="text-xs bg-muted text-foreground border border-border rounded-full px-3 py-1">
         {children}
       </p>
     </motion.div>

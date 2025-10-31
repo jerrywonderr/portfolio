@@ -11,45 +11,23 @@ export default function Home() {
   return (
     <DottedScreen>
       <div className="flex flex-col my-12">
-        <div className="flex flex-col gap-1">
-          <h1 className="font-sans text-3xl sm:text-6xl text-center">
+        <div className="flex flex-col gap-3 max-w-3xl mx-auto text-center">
+          <h1 className="font-sans text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">
             Jeremiah Joseph
           </h1>
-          <p className="font-mono text-center text-md sm:text-lg">
+          <p className="font-mono text-sm sm:text-base text-foreground/70">
             Software Engineer & Tech Leader
           </p>
         </div>
-        <div className="flex flex-col gap-8 my-16 justify-center">
+        <div className="flex flex-col gap-8 my-12 justify-center">
           <Socials />
           <HeadShot />
           <div className="mx-auto">
-            {/* <motion.div
-              whileInView={{
-                scale: [1, 1.5, 1],
-                // transition: {
-                //   type: "spring",
-                //   duration: 2,
-                //   repeat: Infinity,
-                //   repeatDelay: 3,
-                // },
-              }}
-              transition={{
-                type: "spring",
-                duration: 5,
-                repeat: Infinity,
-                repeatDelay: 3,
-              }}
-            > */}
-            {/* <Link href="/career">
-              <PrimaryButton showIcon>See Career Highlights</PrimaryButton>
-            </Link> */}
-            {/* </motion.div> */}
             <Link href="/career">
               <PulsatingPrimaryButton showIcon>
                 See Career Highlights
               </PulsatingPrimaryButton>
             </Link>
-            {/* <PulsatingPrimaryButton>kjsdk</PulsatingPrimaryButton> */}
           </div>
         </div>
       </div>

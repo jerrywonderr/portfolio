@@ -5,12 +5,12 @@ const ExperienceBox = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h4 className="text-2xl sm:text-3xl">My Discography</h4>
+        <h4 className="text-2xl sm:text-3xl text-foreground">My Discography</h4>
         <PrimaryButtonLink extraClass="text-xs sm:text-lg">
           Download resume
         </PrimaryButtonLink>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-6 relative ml-4 border-l border-border">
         <ExperienceCard
           startDate="November, 2023"
           endDate="Present"

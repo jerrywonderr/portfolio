@@ -4,14 +4,22 @@
 
 :root {
   --background: #fffdf7;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --primary: #111827; /* slate-900 */
+  --primary-foreground: #ffffff;
+  --card: #ffffff;
+  --muted: #f1f5f9; /* slate-100 */
+  --border: #e2e8f0; /* slate-200 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e7eb; /* slate-200 */
+  --primary: #f3f4f6; /* gray-100 */
+  --primary-foreground: #0a0a0a;
+  --card: #111827; /* slate-900 */
+  --muted: #1f2937; /* gray-800 */
+  --border: #374151; /* gray-700 */
 }
 
 body {
