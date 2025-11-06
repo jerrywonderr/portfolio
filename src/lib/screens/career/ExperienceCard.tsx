@@ -13,6 +13,8 @@ interface IExperienceCard {
   description: string;
   tags: string[];
   link?: string;
+  certLink?: string;
+  certText?: string;
 }
 
 const ExperienceCard = ({
@@ -24,6 +26,8 @@ const ExperienceCard = ({
   description,
   tags,
   link = "#",
+  certLink,
+  certText,
 }: IExperienceCard) => {
   return (
     <motion.div
@@ -41,7 +45,7 @@ const ExperienceCard = ({
           <div>
             <p className="text-xl font-medium text-foreground">{position}</p>
           </div>
-          <div className="group flex gap-x-2 hover:cursor-pointer">
+          <div className="group flex gap-x-2 hover:cursor-pointer items-center flex-wrap">
             <Image
               src={prepImagePath(logo)}
               width={12}
@@ -60,6 +64,15 @@ const ExperienceCard = ({
               size={24}
               className="hidden group-hover:block"
             />
+            {certLink && (
+              <a
+                target="_blank"
+                href={certLink}
+                className="text-xs bg-muted text-foreground border border-border rounded-full px-2 py-0.5 ml-2 hover:underline"
+              >
+                {certText || "Certificate"}
+              </a>
+            )}
           </div>
           <div>
             <p className="text-sm text-foreground/70 text-justify">

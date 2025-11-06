@@ -37,7 +37,7 @@ const ThemeToggle = () => {
     <button
       aria-label="Toggle theme"
       onClick={toggle}
-      className="fixed top-4 right-4 z-50 bg-card text-foreground border border-border rounded-full p-2 shadow-sm hover:shadow transition"
+      className="z-50 bg-card text-foreground border border-border rounded-full p-2 shadow-sm hover:shadow transition"
     >
       {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
     </button>

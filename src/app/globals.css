@@ -12,6 +12,11 @@
   --border: #e2e8f0; /* slate-200 */
 }
 
+.scroll-smooth,
+html {
+  scroll-behavior: smooth;
+}
+
 .dark {
   --background: #0a0a0a;
   --foreground: #e5e7eb; /* slate-200 */

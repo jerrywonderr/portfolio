@@ -1,4 +1,3 @@
-import ThemeToggle from "@/lib/components/ThemeToggle";
 import type { Metadata } from "next";
 import { Cabin_Sketch } from "next/font/google";
 import localFont from "next/font/local";
@@ -43,7 +42,7 @@ export default function RootLayout({
       <body
         className={` ${geistMono.variable}  ${geistSans.variable} ${cabin.className} antialiased`}
       >
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         {children}
         <div className="flex justify-center items-center p-6 bg-primary">
           <p className="text-primaryForeground text-center">

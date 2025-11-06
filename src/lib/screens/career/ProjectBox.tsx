@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectBox = () => {
   return (
-    <div className="mb-6">
+    <div className="mb-10">
       <div>
         <h4 className="text-2xl mb-3 sm:text-3xl text-foreground">
           My Projects

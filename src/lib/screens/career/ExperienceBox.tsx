@@ -1,4 +1,4 @@
-import { PrimaryButtonLink } from "@/lib/components/Button";
+// Download link rendered as a simple text anchor below
 import ExperienceCard from "./ExperienceCard";
 
 const ExperienceBox = () => {
@@ -6,11 +6,93 @@ const ExperienceBox = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h4 className="text-2xl sm:text-3xl text-foreground">My Discography</h4>
-        <PrimaryButtonLink extraClass="text-xs sm:text-lg">
+        <a
+          href="https://drive.google.com/file/d/1IuAs45Hu0ZBXW_HXTgqgTAnx0f2nC0Nc/view?usp=drive_link"
+          target="_blank"
+          className="text-sm sm:text-base text-foreground/70 hover:text-foreground hover:underline"
+        >
           Download resume
-        </PrimaryButtonLink>
+        </a>
       </div>
       <div className="flex flex-col gap-6 relative ml-4 border-l border-border">
+        <ExperienceCard
+          startDate="January, 2025"
+          endDate="Present"
+          position="Full-Stack Developer (Contract)"
+          logo="/assets/smarg-logo.png"
+          company="Peekvibes"
+          link="#"
+          description="
+                Leading development of a social events platform where users create and join events with real-time commenting and Q&A. 
+                Architected WebSocket-based live interactions with a NestJS backend, Azure Kubernetes (AKS), CNPG for database reliability, and MinIO S3 for storage. 
+                Added end-to-end monitoring with kube-prometheus stack. Live on the App Store."
+          tags={[
+            "React Native",
+            "Expo",
+            "NestJS",
+            "WebSocket",
+            "Azure K8s",
+            "PostgreSQL",
+            "CNPG",
+            "MinIO S3",
+            "Prometheus",
+          ]}
+        />
+        <ExperienceCard
+          startDate="February, 2025"
+          endDate="Present"
+          position="Mobile Developer (Contract)"
+          logo="/assets/smarg-logo.png"
+          company="BatelFit"
+          link="#"
+          description="
+                Building a fitness app with workout tracking and a video player for guided sessions. Using Cloudflare for image delivery and Firebase for backend services. 
+                Released on Google Play Store; working toward iOS App Store compliance."
+          tags={[
+            "React Native",
+            "Expo",
+            "Firebase",
+            "Cloudflare",
+            "TypeScript",
+          ]}
+        />
+        <ExperienceCard
+          startDate="March, 2025"
+          endDate="Present"
+          position="Full-Stack Developer (Contract)"
+          logo="/assets/smarg-logo.png"
+          company="Rehoboth"
+          link="#"
+          description="
+                Developing a marketplace that connects cleaners to customers. Implementing end-to-end booking and secure payments using Stripe, 
+                built with React Native + Expo and Firebase."
+          tags={["React Native", "Expo", "Firebase", "Stripe", "TypeScript"]}
+        />
+        <ExperienceCard
+          startDate="November, 2024"
+          endDate="January, 2025"
+          position="Mobile Developer (Contract)"
+          logo="/assets/smarg-logo.png"
+          company="NexaPay"
+          link="#"
+          certLink="#"
+          certText="ALX Gig Certificate"
+          description="
+                Selected for ALX 'Gig at a Startup' program and placed with NexaPay. Contributed as a React Native developer, 
+                delivering core frontend flows and collaborating closely with product/design. Completed the engagement with a certificate from ALX."
+          tags={["React Native", "Expo", "TypeScript"]}
+        />
+        <ExperienceCard
+          startDate="November, 2025"
+          endDate="Present"
+          position="Mobile Developer (Contract)"
+          logo="/assets/smarg-logo.png"
+          company="NexaPay"
+          link="#"
+          description="
+                Continuing work on the NexaPay mobile application with React Native + Expo, focusing on secure payment experiences, performance, and UI polish."
+          tags={["React Native", "Expo", "TypeScript"]}
+        />
         <ExperienceCard
           startDate="November, 2023"
           endDate="Present"
