@@ -1,22 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCertificate } from "react-icons/fa6";
-
-interface CertificateItem {
-  title: string;
-  issuer: string;
-  date: string;
-  link: string;
-}
-
-const certificates: CertificateItem[] = [
-  {
-    title: "ALX Gig at a Startup",
-    issuer: "ALX",
-    date: "Jan, 2025",
-    link: "#",
-  },
-  // Add more items here
-];
+import { certificates } from "./data/certificates";
 
 const CertificatesBox = () => {
   return (

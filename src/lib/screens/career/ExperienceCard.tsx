@@ -8,7 +8,7 @@ interface IExperienceCard {
   startDate: string;
   endDate: string;
   position: string;
-  logo: string;
+  logo?: string;
   company: string;
   description: string;
   tags: string[];
@@ -46,13 +46,23 @@ const ExperienceCard = ({
             <p className="text-xl font-medium text-foreground">{position}</p>
           </div>
           <div className="group flex gap-x-2 hover:cursor-pointer items-center flex-wrap">
-            <Image
-              src={prepImagePath(logo)}
-              width={12}
-              height={12}
-              className="h-5 w-5 object-contain rounded-md  bg-red-900"
-              alt={`${company}'s logo`}
-            />
+            {logo ? (
+              <Image
+                src={prepImagePath(logo)}
+                width={20}
+                height={20}
+                className="h-6 w-6 object-contain rounded-md"
+                alt={`${company}'s logo`}
+              />
+            ) : (
+              <div
+                aria-hidden
+                className="h-6 w-6 rounded-md bg-primary text-primaryForeground flex items-center justify-center text-xs font-semibold border border-primary/70"
+                title={company}
+              >
+                {company?.[0]?.toUpperCase()}
+              </div>
+            )}
             <a
               target="_blank"
               href={link}
