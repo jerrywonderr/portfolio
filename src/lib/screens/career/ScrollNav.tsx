@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaAward, FaBriefcase, FaLayerGroup } from "react-icons/fa6";
+import {
+  FaAward,
+  FaBriefcase,
+  FaHandshake,
+  FaLayerGroup,
+} from "react-icons/fa6";
 
 const sections = [
   { id: "experiences", label: "Discography" },
+  { id: "contracts", label: "Contracts" },
   { id: "projects", label: "Projects" },
   { id: "certificates", label: "Certificates" },
 ];
@@ -18,20 +24,21 @@ const ScrollNav = () => {
 
     const updateActive = () => {
       ticking = false;
+      const probeY = offset + 80; // require the probe line to pass into the section
       let current = sections[0].id;
       for (const { id } of sections) {
         const el = document.getElementById(id);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        const topOk = rect.top - offset <= 0;
-        const bottomOk = rect.bottom - offset > 0;
-        if (topOk && bottomOk) {
+        if (rect.top <= probeY && rect.bottom >= probeY) {
           current = id;
-          break; // exact match found
+          break;
         }
-        if (rect.top - offset <= 0) current = id; // fallback to last passed
+        if (rect.top > probeY) {
+          break; // haven't reached next section yet; keep previous
+        }
+        current = id; // passed this section's top; keep as candidate
       }
-      // If user is at (or very near) the bottom, force last section active
       const nearBottom =
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 2;
@@ -68,6 +75,8 @@ const ScrollNav = () => {
               ? FaBriefcase
               : id === "projects"
               ? FaLayerGroup
+              : id === "contracts"
+              ? FaHandshake
               : FaAward;
           const isActive = active === id;
           return (
@@ -105,6 +114,8 @@ const ScrollNav = () => {
                   ? FaBriefcase
                   : id === "projects"
                   ? FaLayerGroup
+                  : id === "contracts"
+                  ? FaHandshake
                   : FaAward;
               const isActive = active === id;
               return (

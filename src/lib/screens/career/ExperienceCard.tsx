@@ -15,6 +15,9 @@ interface IExperienceCard {
   link?: string;
   certLink?: string;
   certText?: string;
+  hideDates?: boolean;
+  showDots?: boolean;
+  ongoing?: boolean;
 }
 
 const ExperienceCard = ({
@@ -28,18 +31,30 @@ const ExperienceCard = ({
   link = "#",
   certLink,
   certText,
+  hideDates = false,
+  showDots = true,
+  ongoing = false,
 }: IExperienceCard) => {
   return (
     <motion.div
       whileInView={{ scale: [0.98, 1], transition: { duration: 0.3 } }}
       className="relative bg-card border border-border rounded-lg p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition flex flex-col sm:flex-row ml-6"
     >
-      <span className="absolute -left-6 top-6 h-3 w-3 rounded-full bg-primary ring-4 ring-card" />
-      <div className="sm:min-w-52">
-        <div className="text-foreground/60 text-xs sm:text-sm bg-muted rounded-full inline-block px-3 py-1">
-          {startDate} - {endDate}
+      {showDots && (
+        <span className="absolute -left-6 top-6 h-3 w-3 rounded-full bg-primary ring-4 ring-card" />
+      )}
+      {(ongoing || endDate === "Present") && (
+        <span className="absolute top-3 right-3 text-xs bg-primary text-primaryForeground rounded-full px-2 py-0.5 font-medium">
+          Ongoing
+        </span>
+      )}
+      {!hideDates && (
+        <div className="sm:min-w-52">
+          <div className="text-foreground/60 text-xs sm:text-sm rounded-full inline-block px-3 py-1">
+            {startDate} - {endDate}
+          </div>
         </div>
-      </div>
+      )}
       <div>
         <div className="flex flex-col gap-1">
           <div>

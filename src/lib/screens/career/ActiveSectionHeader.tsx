@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const labelById: Record<string, string> = {
   experiences: "Discography",
   projects: "Projects",
+  contracts: "Contracts",
   certificates: "Certificates",
 };
 
@@ -13,24 +14,26 @@ const ActiveSectionHeader = () => {
   const [active, setActive] = useState<string>("experiences");
 
   useEffect(() => {
-    const sections = Object.keys(labelById);
+    const sections = ["experiences", "contracts", "projects", "certificates"];
     let ticking = false;
     const offset = 96;
 
     const updateActive = () => {
       ticking = false;
+      const probeY = offset + 80;
       let current = sections[0];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        const topOk = rect.top - offset <= 0;
-        const bottomOk = rect.bottom - offset > 0;
-        if (topOk && bottomOk) {
+        if (rect.top <= probeY && rect.bottom >= probeY) {
           current = id;
           break;
         }
-        if (rect.top - offset <= 0) current = id;
+        if (rect.top > probeY) {
+          break;
+        }
+        current = id;
       }
       const nearBottom =
         window.innerHeight + window.scrollY >=

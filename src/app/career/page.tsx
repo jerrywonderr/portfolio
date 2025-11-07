@@ -3,6 +3,7 @@
 import DottedScreen from "@/lib/components/DottedScreen";
 import ActiveSectionHeader from "@/lib/screens/career/ActiveSectionHeader";
 import CertificatesBox from "@/lib/screens/career/CertificatesBox";
+import ContractsBox from "@/lib/screens/career/ContractsBox";
 import ExperienceBox from "@/lib/screens/career/ExperienceBox";
 import ProjectBox from "@/lib/screens/career/ProjectBox";
 import ScrollNav from "@/lib/screens/career/ScrollNav";
@@ -29,6 +30,9 @@ export default function Home() {
             alt="Divider"
             className="w-full h-12 object-cover"
           />
+          <div id="contracts" className="scroll-mt-24">
+            <ContractsBox />
+          </div>
           <div id="projects" className="scroll-mt-24">
             <ProjectBox />
           </div>
