@@ -11,7 +11,12 @@ const ContractsBox = () => {
         {experiences
           .filter((e: ExperienceItem) => e.employmentType === "contract")
           .map((exp, idx) => (
-            <ExperienceCard key={`ct-${idx}`} {...exp} hideDates />
+            <ExperienceCard
+              key={`ct-${idx}`}
+              {...exp}
+              hideDates
+              showDots={false}
+            />
           ))}
       </div>
     </div>
