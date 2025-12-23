@@ -83,10 +83,10 @@ export default function Home() {
                 View All Projects →
               </Link>
               <Link
-                href="/career"
+                href="/career/certificates"
                 className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary border border-border rounded-lg hover:border-primary transition-colors"
               >
-                Explore Career →
+                Explore Journey →
               </Link>
             </div>
           </div>

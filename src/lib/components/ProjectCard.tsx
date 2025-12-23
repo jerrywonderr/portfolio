@@ -6,9 +6,10 @@ interface IProjectCardProps {
   imageSrc: string;
   title: string;
   description: string;
+  priority?: boolean;
 }
 
-const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
+const ProjectCard = ({ imageSrc, title, description, priority = false }: IProjectCardProps) => {
   return (
     <motion.div
       className="group flex flex-col bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
@@ -25,6 +26,7 @@ const ProjectCard = ({ imageSrc, title, description }: IProjectCardProps) => {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={priority}
         />
       </div>
       <div className="flex flex-col p-6 relative">

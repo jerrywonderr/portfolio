@@ -106,7 +106,7 @@ const AchievementsTimeline = () => {
       </div>
 
       <div className="relative">
-        {years.map((year) => {
+        {years.map((year, yearIdx) => {
           const yearAchievements = sortedAchievements.filter((a) => a.year === year);
           return (
             <div key={year} className="mb-16">
@@ -127,6 +127,7 @@ const AchievementsTimeline = () => {
                 {yearAchievements.map((achievement, idx) => {
                   const Icon = getIcon(achievement.type, achievement.category);
                   const colors = getCategoryColors(achievement.category);
+                  const isAboveFold = yearIdx === 0 && idx < 2;
 
                   return (
                     <motion.div
@@ -165,6 +166,7 @@ const AchievementsTimeline = () => {
                                 height={300}
                                 alt={achievement.title}
                                 className="w-full h-48 object-cover group-hover/image:scale-105 transition-transform duration-300"
+                                priority={isAboveFold}
                               />
                               <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/20 transition-colors duration-300 rounded-xl flex items-center justify-center opacity-0 group-hover/image:opacity-100 pointer-events-none">
                                 <span className="text-white text-sm font-medium bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">

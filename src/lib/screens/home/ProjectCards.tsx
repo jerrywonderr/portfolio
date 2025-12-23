@@ -36,6 +36,7 @@ const ProjectCards = () => {
           title={`${exp.position} at ${exp.company}`}
           imageSrc={exp.bannerImage || exp.logo || "/assets/project-card.jpg"}
           description={`${exp.startDate} - ${exp.endDate}`}
+          priority={idx === 0}
         />
       ))}
     </div>
