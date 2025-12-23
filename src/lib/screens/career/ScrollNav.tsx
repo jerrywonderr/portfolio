@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useActiveSection } from "@/lib/utils/useActiveSection";
 import {
   FaAward,
   FaBriefcase,
@@ -16,51 +16,7 @@ const sections = [
 ];
 
 const ScrollNav = () => {
-  const [active, setActive] = useState<string>(sections[0].id);
-
-  useEffect(() => {
-    let ticking = false;
-    const offset = 96; // tuned to sticky heights
-
-    const updateActive = () => {
-      ticking = false;
-      const probeY = offset + 80; // require the probe line to pass into the section
-      let current = sections[0].id;
-      for (const { id } of sections) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= probeY && rect.bottom >= probeY) {
-          current = id;
-          break;
-        }
-        if (rect.top > probeY) {
-          break; // haven't reached next section yet; keep previous
-        }
-        current = id; // passed this section's top; keep as candidate
-      }
-      const nearBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 2;
-      if (nearBottom) current = sections[sections.length - 1].id;
-      setActive(current);
-    };
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActive);
-        ticking = true;
-      }
-    };
-
-    updateActive();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
+  const active = useActiveSection();
 
   return (
     <nav
