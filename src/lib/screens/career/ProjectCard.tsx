@@ -49,7 +49,7 @@ const ProjectCard = ({
                 duration: 0.8,
                 staggerChildren: 3,
                 delayChildren: 0.5,
-                beforeChildren: true,
+                // beforeChildren: true,
               },
             }}
             className="flex flex-wrap gap-x-2 gap-y-2 items-center"

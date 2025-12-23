@@ -13,6 +13,7 @@ export interface ExperienceItem {
   ongoing?: boolean;
   appStoreLink?: string;
   playStoreLink?: string;
+  bannerImage?: string;
 }
 
 export const experiences: ExperienceItem[] = [

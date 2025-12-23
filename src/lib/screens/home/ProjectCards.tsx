@@ -1,42 +1,41 @@
 import ProjectCard from "@/lib/components/ProjectCard";
+import { experiences } from "@/lib/screens/career/data/experiences";
 
-interface IProject {
-  id: number;
-  title: string;
-  imageSrc: string;
-  description: string;
-}
+const parseDate = (dateStr: string): Date => {
+  if (dateStr === "Present") {
+    return new Date(9999, 11, 31);
+  }
+  const [month, year] = dateStr.split(", ");
+  const monthIndex = new Date(Date.parse(`${month} 1, ${year}`)).getMonth();
+  return new Date(parseInt(year), monthIndex, 1);
+};
 
-const projects: IProject[] = [
-  {
-    id: 1,
-    title: "Software Enginner at Smarg",
-    imageSrc: "/assets/smarg-app-shot.jpeg",
-    description: "November, 2023 - Present",
-  },
-  {
-    id: 2,
-    title: "Software Enginner at Cotruste",
-    imageSrc: "/assets/cotruste-app-shot.png",
-    description: "June, 2023 - January, 2024",
-  },
-  {
-    id: 3,
-    title: "Software Engineer at Sentinel",
-    imageSrc: "/assets/sentinel-app-shot.png",
-    description: "March, 2023 - June, 2023",
-  },
-];
+const sortedExperiences = [...experiences].sort((a, b) => {
+  const aIsOngoing = a.endDate === "Present" || a.ongoing;
+  const bIsOngoing = b.endDate === "Present" || b.ongoing;
+  if (aIsOngoing && !bIsOngoing) return -1;
+  if (!aIsOngoing && bIsOngoing) return 1;
+  if (aIsOngoing && bIsOngoing) {
+    const startA = parseDate(a.startDate);
+    const startB = parseDate(b.startDate);
+    return startB.getTime() - startA.getTime();
+  }
+  const endA = parseDate(a.endDate);
+  const endB = parseDate(b.endDate);
+  return endB.getTime() - endA.getTime();
+});
+
+const latestExperiences = sortedExperiences.slice(0, 3);
 
 const ProjectCards = () => {
   return (
     <div className="mx-auto mb-6 max-w-6xl grid [grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))] gap-6 justify-center px-4">
-      {projects.map(({ title, id, imageSrc, description }) => (
+      {latestExperiences.map((exp, idx) => (
         <ProjectCard
-          key={id}
-          title={title}
-          imageSrc={imageSrc}
-          description={description}
+          key={`exp-${idx}`}
+          title={`${exp.position} at ${exp.company}`}
+          imageSrc={exp.bannerImage || exp.logo || "/assets/project-card.jpg"}
+          description={`${exp.startDate} - ${exp.endDate}`}
         />
       ))}
     </div>
