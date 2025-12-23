@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Certificates | Career | Jeremiah Joseph",
+  title: "Achievements & Recognition | Career | Jeremiah Joseph",
   description:
-    "Professional certifications and achievements earned by Jeremiah Joseph. Certifications from ALX, and other leading technology education platforms.",
+    "A journey of achievements, awards, and recognition including certifications from ALX, Google, leadership awards from University of Ibadan, and competition wins like Cardtonic Upskill Program.",
 };
 
 export default function CertificatesLayout({

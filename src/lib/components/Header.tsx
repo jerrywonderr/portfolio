@@ -9,7 +9,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/career/experience", label: "Experience" },
   { href: "/career/projects", label: "Projects" },
-  { href: "/career/certificates", label: "Certificates" },
+  { href: "/career/certificates", label: "Achievements" },
 ];
 
 const Header = () => {
