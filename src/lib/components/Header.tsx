@@ -7,8 +7,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/career", label: "Career" },
+  { href: "/career/experience", label: "Experience" },
   { href: "/career/projects", label: "Projects" },
+  { href: "/career/certificates", label: "Certificates" },
 ];
 
 const Header = () => {
@@ -27,7 +28,9 @@ const Header = () => {
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
               return (
                 <Link
                   key={item.href}
@@ -58,7 +61,9 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive =
+                  pathname === item.href ||
+                  (item.href !== "/" && pathname.startsWith(item.href));
                 return (
                   <Link
                     key={item.href}

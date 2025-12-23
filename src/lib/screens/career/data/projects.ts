@@ -9,6 +9,22 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
+    title: "Conference Attendance Tracking System",
+    image: "/assets/spirit-chapel-tracker.png",
+    description:
+      "Designed and deployed a real-time attendance tracking platform for Spirit Chapel International Church's 4-day conference, enabling QR code-based registration and day-specific attendance verification. Implemented an admin dashboard with real-time analytics to track participant engagement and automatically qualify attendees for gift distribution based on attendance criteria. Built with Next.js for server-side rendering, Supabase for real-time database operations and authentication, and integrated QR code generation and scanning. Successfully handled concurrent attendance scans during the event with zero downtime on Vercel.",
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "Supabase",
+      "TypeScript",
+      "QR Codes",
+      "Vercel",
+      "Real-time Data",
+    ],
+    link: "https://wrc-attendance-app.vercel.app/",
+  },
+  {
     title: "Eventra",
     image: "/assets/eventra-app.png",
     description:
