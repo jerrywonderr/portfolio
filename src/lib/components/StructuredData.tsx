@@ -43,6 +43,12 @@ const StructuredData = () => {
       name: "Jeremiah Joseph",
       jobTitle: "Senior Software Engineer",
     },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "ZZ",
+      addressLocality: "Remote",
+    },
+    telephone: "+2347057570146",
     areaServed: "Worldwide",
     serviceType: [
       "Software Development",
@@ -51,6 +57,10 @@ const StructuredData = () => {
       "Backend Development",
       "Cloud Infrastructure",
     ],
+    image: process.env.NEXT_PUBLIC_SITE_URL
+      ? `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-image.jpeg`
+      : "https://jerrywonder.dev/opengraph-image.jpeg",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://jerrywonder.dev",
   };
 
   return (
