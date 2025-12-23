@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa6";
 
 const sections = [
-  { id: "experiences", label: "Discography" },
+  { id: "experiences", label: "Experience" },
   { id: "contracts", label: "Contracts" },
   { id: "projects", label: "Projects" },
   { id: "certificates", label: "Certificates" },

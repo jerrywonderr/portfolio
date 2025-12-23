@@ -1,44 +1,68 @@
 "use client";
 
 import DottedScreen from "@/lib/components/DottedScreen";
-import ActiveSectionHeader from "@/lib/screens/career/ActiveSectionHeader";
-import CertificatesBox from "@/lib/screens/career/CertificatesBox";
-import ContractsBox from "@/lib/screens/career/ContractsBox";
-import ExperienceBox from "@/lib/screens/career/ExperienceBox";
-import ProjectBox from "@/lib/screens/career/ProjectBox";
-import ScrollNav from "@/lib/screens/career/ScrollNav";
-import prepImagePath from "@/lib/utils/prep-image-path";
-import Image from "next/image";
+import Link from "next/link";
+import { FaAward, FaBriefcase, FaLayerGroup } from "react-icons/fa6";
 
-export default function Home() {
+const careerSections = [
+  {
+    title: "Experience",
+    description: "Full-time positions and contract engagements",
+    href: "/career/experience",
+    icon: FaBriefcase,
+  },
+  {
+    title: "Projects",
+    description: "Personal projects and open-source contributions",
+    href: "/career/projects",
+    icon: FaLayerGroup,
+  },
+  {
+    title: "Certificates",
+    description: "Professional certifications and achievements",
+    href: "/career/certificates",
+    icon: FaAward,
+  },
+];
+
+export default function CareerPage() {
   return (
     <DottedScreen>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <aside className="md:col-span-1 order-first md:order-first sticky top-0 md:top-20 z-30 h-fit bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <ScrollNav />
-        </aside>
-        <main className="md:col-span-2 flex flex-col gap-8">
-          <ActiveSectionHeader />
-          <div id="experiences" className="scroll-mt-24">
-            <ExperienceBox />
-          </div>
-          <Image
-            src={prepImagePath("/assets/divider.png")}
-            width={320}
-            height={32}
-            alt="Divider"
-            className="w-full h-12 object-cover"
-          />
-          <div id="contracts" className="scroll-mt-24">
-            <ContractsBox />
-          </div>
-          <div id="projects" className="scroll-mt-24">
-            <ProjectBox />
-          </div>
-          <div id="certificates" className="scroll-mt-24">
-            <CertificatesBox />
-          </div>
-        </main>
+      <div className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            Career
+          </h1>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            Explore my professional experience, projects, and achievements
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {careerSections.map((section) => {
+            const Icon = section.icon;
+            return (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-200"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <Icon className="text-primary" size={24} />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {section.title}
+                    </h2>
+                    <p className="text-foreground/70 text-sm">
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </DottedScreen>
   );

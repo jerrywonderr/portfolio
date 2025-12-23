@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     company: "GoCreatorsHub",
     link: "#",
     description:
-      "\n                Building the backend for a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
+      "Building the backend for a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
     tags: [
       "TypeScript",
       "Supabase",
@@ -57,7 +57,7 @@ export const experiences: ExperienceItem[] = [
     company: "Rehoboth",
     link: "#",
     description:
-      "\n                Developing a marketplace that connects cleaners to customers. Implementing end-to-end booking and secure payments using Stripe, \n                built with React Native + Expo and Firebase.",
+      "Developing a marketplace that connects cleaners to customers. Implementing end-to-end booking and secure payments using Stripe, built with React Native + Expo and Firebase.",
     tags: ["React Native", "Expo", "Firebase", "Stripe", "TypeScript"],
     ongoing: true,
     appStoreLink:
@@ -75,7 +75,7 @@ export const experiences: ExperienceItem[] = [
     link: "https://peekvibes.com/",
     appStoreLink: "https://apps.apple.com/us/app/peekvibes/id6748236083",
     description:
-      "\n                Leading development of a social events platform built with React Native + Expo where users create and join events with real-time commenting and Q&A. \n                Architected WebSocket-based live interactions with a NestJS backend, Azure Kubernetes (AKS), CNPG for database reliability, and MinIO S3 for storage. \n                Added end-to-end monitoring with kube-prometheus stack. Live on the App Store.",
+      "Leading development of a social events platform built with React Native + Expo where users create and join events with real-time commenting and Q&A. Architected WebSocket-based live interactions with a NestJS backend, Azure Kubernetes (AKS), CNPG for database reliability, and MinIO S3 for storage. Added end-to-end monitoring with kube-prometheus stack. Live on the App Store.",
     tags: [
       "React Native",
       "Expo",
@@ -99,7 +99,7 @@ export const experiences: ExperienceItem[] = [
       "https://play.google.com/store/apps/details?id=com.batelfit.app",
     appStoreLink: "https://apps.apple.com/ng/app/batel-fit-app/id6751505165",
     description:
-      "\n                Building a fitness app with workout tracking and a video player for guided sessions. Using Cloudflare for image delivery and Firebase for backend services. \n                Released on Google Play Store; working toward iOS App Store compliance.",
+      "Building a fitness app with workout tracking and a video player for guided sessions. Using Cloudflare for image delivery and Firebase for backend services. Released on Google Play Store; working toward iOS App Store compliance.",
     tags: ["React Native", "Expo", "Firebase", "Cloudflare", "TypeScript"],
   },
   {
@@ -114,7 +114,7 @@ export const experiences: ExperienceItem[] = [
       "https://drive.google.com/file/d/19l_gHDbZgRwGVKIOQsjMqTKJImlzihek/view?usp=drive_link",
     certText: "ALX Gig Certificate",
     description:
-      "\n                Selected for ALX 'Gig at a Startup' program and placed with NexaPay. Contributed as a React Native developer, \n                delivering core frontend flows and collaborating closely with product/design. Completed the engagement with a certificate from ALX.",
+      "Selected for ALX 'Gig at a Startup' program and placed with NexaPay. Contributed as a React Native developer, delivering core frontend flows and collaborating closely with product/design. Completed the engagement with a certificate from ALX.",
     tags: ["React Native", "Expo", "TypeScript"],
   },
   {
@@ -126,7 +126,7 @@ export const experiences: ExperienceItem[] = [
     company: "Smarg",
     link: "https://usesmarg.com",
     description:
-      "\n                As a full-stack developer at Smarg, I contributed to the\n                development of a fintech app by designing and implementing the\n                core payment feature. I utilized React Native, TamaGUI, and\n                Supabase to create an efficient and scalable codebase. My\n                hands-on experience with database design using Supabase enhanced\n                my expertise in developing robust and efficient databases for\n                complex applications.",
+      "As a full-stack developer at Smarg, I contributed to the development of a fintech app by designing and implementing the core payment feature. I utilized React Native, TamaGUI, and Supabase to create an efficient and scalable codebase. My hands-on experience with database design using Supabase enhanced my expertise in developing robust and efficient databases for complex applications.",
     tags: [
       "TypeScript",
       "JavaScript",
@@ -146,7 +146,7 @@ export const experiences: ExperienceItem[] = [
     company: "Cotrust Equity",
     link: "https://cotruste.com",
     description:
-      "\n                As part of a team, I successfully developed the MVP for a fintech mobile app within three months by \n                implementing 70% of core functionalities. Git was used to ensure efficient collaboration and version \n                control. Post-launch, I continued to provide support and enhancements to improve the app's performance \n                and user satisfaction. To reduce expenses, I selected a cost-effective KYC verification service that \n                resulted in a ₦130 cost per successful run.",
+      "As part of a team, I successfully developed the MVP for a fintech mobile app within three months by implementing 70% of core functionalities. Git was used to ensure efficient collaboration and version control. Post-launch, I continued to provide support and enhancements to improve the app's performance and user satisfaction. To reduce expenses, I selected a cost-effective KYC verification service that resulted in a ₦130 cost per successful run.",
     tags: [
       "TypeScript",
       "JavaScript",
@@ -164,7 +164,7 @@ export const experiences: ExperienceItem[] = [
     company: "Sentinel",
     link: "https://usesentinel.app",
     description:
-      "\n                As part of the development team at Sentinel, I improved the startup's B2B offerings by creating \n                a responsive landing page using React and Next.js, and integrating Tally Form to effectively \n                collect leads. Collaboration with UI/UX designers was crucial to ensure consistency with \n                brand identity and pixel-perfect execution. To increase the maintainability and scalability \n                of the codebase, I created reusable components for the Sentinel dashboard. By working cross-functionally \n                with product and design teams, I iterated on features to meet business requirements.",
+      "As part of the development team at Sentinel, I improved the startup's B2B offerings by creating a responsive landing page using React and Next.js, and integrating Tally Form to effectively collect leads. Collaboration with UI/UX designers was crucial to ensure consistency with brand identity and pixel-perfect execution. To increase the maintainability and scalability of the codebase, I created reusable components for the Sentinel dashboard. By working cross-functionally with product and design teams, I iterated on features to meet business requirements.",
     tags: ["TypeScript", "JavaScript", "Supabase", "React Native", "RabbitMQ"],
   },
   {
@@ -176,7 +176,7 @@ export const experiences: ExperienceItem[] = [
     company: "Kolat OAKS Logistics",
     link: "https://www.google.com/search?q=kolatlogistics",
     description:
-      "\n                In a time-efficient manner, I developed a mobile-responsive website using React, React-Bootstrap, and Node.js within a month. \n                This project required close collaboration with stakeholders to translate their vision into a visually appealing and user-friendly UI. \n                The website was deployed on Namecheap, including the purchase of a domain name and setting up a business email account for Kolat OAK \n                Logistics. Furthermore, a functional Contact Us form was added to enhance user engagement. My contribution resulted in an estimated \n                60% improvement in their online presence, directly impacting the business's outreach.",
+      "In a time-efficient manner, I developed a mobile-responsive website using React, React-Bootstrap, and Node.js within a month. This project required close collaboration with stakeholders to translate their vision into a visually appealing and user-friendly UI. The website was deployed on Namecheap, including the purchase of a domain name and setting up a business email account for Kolat OAK Logistics. Furthermore, a functional Contact Us form was added to enhance user engagement. My contribution resulted in an estimated 60% improvement in their online presence, directly impacting the business's outreach.",
     tags: [
       "React.js",
       "JavaScript",

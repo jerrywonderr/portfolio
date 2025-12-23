@@ -4,7 +4,7 @@ import ThemeToggle from "@/lib/components/ThemeToggle";
 import { useActiveSection } from "@/lib/utils/useActiveSection";
 
 const labelById: Record<string, string> = {
-  experiences: "Discography",
+  experiences: "Experience",
   projects: "Projects",
   contracts: "Contracts",
   certificates: "Certificates",

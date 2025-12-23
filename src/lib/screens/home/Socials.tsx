@@ -2,66 +2,53 @@ import { ReactNode } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { PiPhoneCallBold } from "react-icons/pi";
-import Typewriter from "typewriter-effect";
 
 interface ISocialLink {
   children: ReactNode;
   link: string;
+  label: string;
 }
-const SocialLink = ({ children, link }: ISocialLink) => {
+
+const SocialLink = ({ children, link, label }: ISocialLink) => {
   return (
     <a
       href={link}
       target="_blank"
-      className="hover:scale-110 transition-all duration-200"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="p-3 rounded-xl text-foreground/70 hover:text-foreground hover:bg-muted transition-all duration-200 hover:scale-110"
     >
       {children}
     </a>
   );
 };
 
-const Visuals = () => {
+const Socials = () => {
   return (
-    <div className="flex flex-col gap-y-2 justify-center align-center">
-      <h4 className="text-center">
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(`Hello 👋`)
-              .pauseFor(2500)
-              .changeDeleteSpeed(9)
-              .deleteAll()
-              .typeString(`Connect with me 😎`)
-              .pauseFor(2500)
-              .deleteAll()
-              .start();
-          }}
-          options={{ loop: true, autoStart: true }}
-        />
-      </h4>
-      <div className="flex gap-x-2 mx-auto justify-center align-center">
-        <SocialLink link="mailto:josephjeremiah2001@gmail.com">
-          <IoMail size={24} />
-        </SocialLink>
-
-        <SocialLink link="tel:+2347057570146">
-          <PiPhoneCallBold size={24} />
-        </SocialLink>
-
-        <SocialLink link="https://linkedin.com/in/jerrywonderr">
-          <FaLinkedin size={24} className="" />
-        </SocialLink>
-
-        <SocialLink link="https://wa.me/+2347057570146">
-          <FaWhatsapp size={24} className="" />
-        </SocialLink>
-
-        <SocialLink link="https://github.com/jerrywonderr">
-          <FaGithub size={24} className="" />
-        </SocialLink>
-      </div>
+    <div className="flex gap-3 justify-center items-center md:justify-start ">
+      <SocialLink
+        link="mailto:josephjeremiah2001@gmail.com"
+        label="Email Jeremiah Joseph"
+      >
+        <IoMail size={28} />
+      </SocialLink>
+      <SocialLink link="tel:+2347057570146" label="Call Jeremiah Joseph">
+        <PiPhoneCallBold size={28} />
+      </SocialLink>
+      <SocialLink
+        link="https://linkedin.com/in/jerrywonderr"
+        label="LinkedIn Profile"
+      >
+        <FaLinkedin size={28} />
+      </SocialLink>
+      <SocialLink link="https://wa.me/+2347057570146" label="WhatsApp Contact">
+        <FaWhatsapp size={28} />
+      </SocialLink>
+      <SocialLink link="https://github.com/jerrywonderr" label="GitHub Profile">
+        <FaGithub size={28} />
+      </SocialLink>
     </div>
   );
 };
 
-export default Visuals;
+export default Socials;

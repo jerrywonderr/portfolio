@@ -1,5 +1,5 @@
+import Header from "@/lib/components/Header";
 import type { Metadata } from "next";
-import { Cabin_Sketch } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -16,21 +16,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jeremiah's Portfolio",
-  description: "Portfolio for Jeremiah Joseph (jerrywonderr)",
+  title: "Jeremiah Joseph | Senior Software Engineer",
+  description:
+    "Senior Software Engineer specializing in full-stack development, infrastructure architecture, and production-scale applications. Expert in React Native, TypeScript, cloud infrastructure, and distributed systems.",
 };
 export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
-
-const cabin = Cabin_Sketch({
-  weight: ["400", "700"],
-  style: ["normal"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-cabin-sketch",
-});
 
 export default function RootLayout({
   children,
@@ -38,18 +31,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
-        className={` ${geistMono.variable}  ${geistSans.variable} ${cabin.className} antialiased`}
+        className={`${geistMono.variable} ${geistSans.variable} antialiased`}
       >
-        {/* <ThemeToggle /> */}
+        <Header />
         {children}
-        <div className="flex justify-center items-center p-6 bg-primary">
-          <p className="text-primaryForeground text-center">
-            Designed and developed by Jeremiah Joseph using Next.js and
-            TailwindCSS.
-          </p>
-        </div>
+        <footer className="border-t border-border bg-muted/30">
+          <div className="max-w-screen-xl mx-auto px-4 py-6">
+            <p className="text-sm text-foreground/70 text-center">
+              Designed and developed by Jeremiah Joseph using Next.js and
+              TailwindCSS
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );
