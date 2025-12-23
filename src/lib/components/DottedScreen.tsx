@@ -1,11 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
-
-interface Dot {
-  left: number;
-  top: number;
-  right: number;
-  bottom: number;
-}
+import { ReactNode } from "react";
 
 interface IDottedScreenProps {
   children: ReactNode;

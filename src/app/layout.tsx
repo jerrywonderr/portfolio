@@ -16,6 +16,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://jerrywonder.dev"
+  ),
   title: "Jeremiah Joseph | Senior Software Engineer",
   description:
     "Senior Software Engineer specializing in full-stack development, infrastructure architecture, and production-scale applications. Expert in React Native, TypeScript, cloud infrastructure, and distributed systems.",

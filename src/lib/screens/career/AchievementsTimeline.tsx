@@ -2,11 +2,10 @@
 
 import { achievements, AchievementItem } from "./data/achievements";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCertificate, FaTrophy, FaAward, FaGraduationCap, FaUsers, FaCode, FaMedal } from "react-icons/fa6";
+import { FaCertificate, FaTrophy, FaAward, FaGraduationCap, FaUsers } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import prepImagePath from "@/lib/utils/prep-image-path";
-import { RiArrowRightUpFill } from "react-icons/ri";
 import { useState } from "react";
 
 const getIcon = (type: AchievementItem["type"], category: AchievementItem["category"]) => {
@@ -107,7 +106,7 @@ const AchievementsTimeline = () => {
       </div>
 
       <div className="relative">
-        {years.map((year, yearIdx) => {
+        {years.map((year) => {
           const yearAchievements = sortedAchievements.filter((a) => a.year === year);
           return (
             <div key={year} className="mb-16">

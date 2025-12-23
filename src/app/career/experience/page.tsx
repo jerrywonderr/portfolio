@@ -2,7 +2,7 @@
 
 import DottedScreen from "@/lib/components/DottedScreen";
 import ExperienceCard from "@/lib/screens/career/ExperienceCard";
-import { ExperienceItem, experiences } from "@/lib/screens/career/data/experiences";
+import { experiences } from "@/lib/screens/career/data/experiences";
 import { useState } from "react";
 
 export default function ExperiencePage() {
