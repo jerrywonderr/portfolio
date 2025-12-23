@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <DottedScreen>
-      <main>
+      <main itemScope itemType="https://schema.org/Person">
         <section className="relative max-w-6xl mx-auto px-4 py-20 sm:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl -z-10" />
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
@@ -25,10 +25,16 @@ export default function Home() {
                   Senior Engineer
                 </span>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4 text-foreground">
+              <h1
+                itemProp="name"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4 text-foreground"
+              >
                 Jeremiah Joseph
               </h1>
-              <p className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+              <p
+                itemProp="jobTitle"
+                className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6"
+              >
                 Full-Stack Architect
               </p>
               <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
