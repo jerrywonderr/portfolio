@@ -11,6 +11,8 @@ export interface ExperienceItem {
   certLink?: string;
   certText?: string;
   ongoing?: boolean;
+  appStoreLink?: string;
+  playStoreLink?: string;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -57,6 +59,10 @@ export const experiences: ExperienceItem[] = [
       "\n                Developing a marketplace that connects cleaners to customers. Implementing end-to-end booking and secure payments using Stripe, \n                built with React Native + Expo and Firebase.",
     tags: ["React Native", "Expo", "Firebase", "Stripe", "TypeScript"],
     ongoing: true,
+    appStoreLink:
+      "https://apps.apple.com/ng/app/rehoboth-cleaning-app/id6755183375",
+    playStoreLink:
+      "https://play.google.com/store/apps/details?id=com.rehoboth.org",
   },
   {
     startDate: "January, 2025",
@@ -66,6 +72,7 @@ export const experiences: ExperienceItem[] = [
     logo: "/assets/peekvibes-logo.png",
     company: "Peekvibes",
     link: "https://peekvibes.com/",
+    appStoreLink: "https://apps.apple.com/us/app/peekvibes/id6748236083",
     description:
       "\n                Leading development of a social events platform built with React Native + Expo where users create and join events with real-time commenting and Q&A. \n                Architected WebSocket-based live interactions with a NestJS backend, Azure Kubernetes (AKS), CNPG for database reliability, and MinIO S3 for storage. \n                Added end-to-end monitoring with kube-prometheus stack. Live on the App Store.",
     tags: [
@@ -87,6 +94,9 @@ export const experiences: ExperienceItem[] = [
     employmentType: "contract",
     company: "BatelFit",
     link: "#",
+    playStoreLink:
+      "https://play.google.com/store/apps/details?id=com.batelfit.app",
+    appStoreLink: "https://apps.apple.com/ng/app/batel-fit-app/id6751505165",
     description:
       "\n                Building a fitness app with workout tracking and a video player for guided sessions. Using Cloudflare for image delivery and Firebase for backend services. \n                Released on Google Play Store; working toward iOS App Store compliance.",
     tags: ["React Native", "Expo", "Firebase", "Cloudflare", "TypeScript"],

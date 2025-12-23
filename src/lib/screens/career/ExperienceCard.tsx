@@ -1,6 +1,7 @@
 import prepImagePath from "@/lib/utils/prep-image-path";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { RiArrowRightUpFill } from "react-icons/ri";
 import Tag from "./Tag";
 
@@ -18,6 +19,8 @@ interface IExperienceCard {
   hideDates?: boolean;
   showDots?: boolean;
   ongoing?: boolean;
+  appStoreLink?: string;
+  playStoreLink?: string;
 }
 
 const ExperienceCard = ({
@@ -34,6 +37,8 @@ const ExperienceCard = ({
   hideDates = false,
   showDots = true,
   ongoing = false,
+  appStoreLink,
+  playStoreLink,
 }: IExperienceCard) => {
   return (
     <motion.div
@@ -99,6 +104,30 @@ const ExperienceCard = ({
               </a>
             )}
           </div>
+          {(appStoreLink || playStoreLink) && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {appStoreLink && (
+                <a
+                  target="_blank"
+                  href={appStoreLink}
+                  className="text-xs bg-foreground text-background border border-border rounded-md px-3 py-1.5 flex items-center gap-1.5 hover:opacity-90 transition"
+                >
+                  <FaApple size={12} />
+                  App Store
+                </a>
+              )}
+              {playStoreLink && (
+                <a
+                  target="_blank"
+                  href={playStoreLink}
+                  className="text-xs bg-foreground text-background border border-border rounded-md px-3 py-1.5 flex items-center gap-1.5 hover:opacity-90 transition"
+                >
+                  <FaGooglePlay size={12} />
+                  Play Store
+                </a>
+              )}
+            </div>
+          )}
           <div>
             <p className="text-sm text-foreground/70 text-justify">
               {description}
@@ -114,7 +143,7 @@ const ExperienceCard = ({
                 duration: 0.8,
                 staggerChildren: 3,
                 delayChildren: 0.5,
-                beforeChildren: true,
+                // beforeChildren: true,
               },
             }}
             className="flex flex-wrap gap-x-2 gap-y-2 align-middle"
