@@ -34,7 +34,7 @@ const KeyAchievements = () => {
     ? Math.floor(
         (new Date().getTime() - earliestStartDate.getTime()) /
           (1000 * 60 * 60 * 24 * 365.25)
-      )
+      ) + 1
     : 0;
 
   const achievements = [

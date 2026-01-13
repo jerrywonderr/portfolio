@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import prepImagePath from "../utils/prep-image-path";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -24,7 +26,13 @@ const Header = () => {
             href="/"
             className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            JJ
+            <Image
+              src={prepImagePath("/assets/logo.png")}
+              alt="Logo"
+              width={48}
+              height={48}
+              objectFit="contain"
+            />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
