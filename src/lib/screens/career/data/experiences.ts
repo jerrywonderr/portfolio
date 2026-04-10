@@ -20,10 +20,10 @@ export const experiences: ExperienceItem[] = [
   {
     startDate: "September, 2025",
     endDate: "Present",
-    position: "Backend Developer",
+    position: "Full-Stack Developer",
     employmentType: "full_time",
     company: "GoCreatorsHub",
-    link: "#",
+    link: "https://gocreatorshub.com/",
     description:
       "Building the backend for a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
     tags: [
@@ -124,7 +124,8 @@ export const experiences: ExperienceItem[] = [
     employmentType: "full_time",
     logo: "/assets/smarg-logo.png",
     company: "Smarg",
-    link: "https://usesmarg.com",
+    link: "#",
+    // link: "https://usesmarg.com",
     description:
       "As a full-stack developer at Smarg, I contributed to the development of a fintech app by designing and implementing the core payment feature. I utilized React Native, TamaGUI, and Supabase to create an efficient and scalable codebase. My hands-on experience with database design using Supabase enhanced my expertise in developing robust and efficient databases for complex applications.",
     tags: [
@@ -162,7 +163,8 @@ export const experiences: ExperienceItem[] = [
     employmentType: "full_time",
     logo: "/assets/sentinel-logo.jpeg",
     company: "Sentinel",
-    link: "https://usesentinel.app",
+    // link: "https://usesentinel.app",
+    link: '#',
     description:
       "As part of the development team at Sentinel, I improved the startup's B2B offerings by creating a responsive landing page using React and Next.js, and integrating Tally Form to effectively collect leads. Collaboration with UI/UX designers was crucial to ensure consistency with brand identity and pixel-perfect execution. To increase the maintainability and scalability of the codebase, I created reusable components for the Sentinel dashboard. By working cross-functionally with product and design teams, I iterated on features to meet business requirements.",
     tags: ["TypeScript", "JavaScript", "Supabase", "React Native", "RabbitMQ"],
@@ -174,7 +176,7 @@ export const experiences: ExperienceItem[] = [
     employmentType: "full_time",
     logo: "/assets/kolat-logo.png",
     company: "Kolat OAKS Logistics",
-    link: "https://www.google.com/search?q=kolatlogistics",
+    link: "https://kolat.onrender.com/",
     description:
       "In a time-efficient manner, I developed a mobile-responsive website using React, React-Bootstrap, and Node.js within a month. This project required close collaboration with stakeholders to translate their vision into a visually appealing and user-friendly UI. The website was deployed on Namecheap, including the purchase of a domain name and setting up a business email account for Kolat OAK Logistics. Furthermore, a functional Contact Us form was added to enhance user engagement. My contribution resulted in an estimated 60% improvement in their online presence, directly impacting the business's outreach.",
     tags: [
