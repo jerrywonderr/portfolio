@@ -3,7 +3,7 @@ import { experiences } from "@/lib/screens/career/data/experiences";
 const KeyAchievements = () => {
   const appsWithStoreLinks = experiences.filter(
     (exp) => exp.appStoreLink || exp.playStoreLink
-  ).length;
+  ).reduce((acc, exp) => exp.appStoreLink && exp.playStoreLink ? acc + 2 : acc + 1, 0);
 
   const parseDate = (dateStr: string): Date => {
     if (dateStr === "Present") return new Date();
@@ -32,9 +32,9 @@ const KeyAchievements = () => {
 
   const yearsOfExperience = earliestStartDate
     ? Math.floor(
-        (new Date().getTime() - earliestStartDate.getTime()) /
-          (1000 * 60 * 60 * 24 * 365.25)
-      ) + 1
+      (new Date().getTime() - earliestStartDate.getTime()) /
+      (1000 * 60 * 60 * 24 * 365.25)
+    )
     : 0;
 
   const achievements = [

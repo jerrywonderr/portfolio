@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     company: "GoCreatorsHub",
     link: "https://gocreatorshub.com/",
     description:
-      "Building the backend for a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
+      "Building a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
     tags: [
       "TypeScript",
       "Supabase",
@@ -110,11 +110,12 @@ export const experiences: ExperienceItem[] = [
     logo: "/assets/nexapay-logo.png",
     company: "NexaPay",
     link: "#",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.nexapay.app&pcampaignid=web_share",
     certLink:
       "https://drive.google.com/file/d/19l_gHDbZgRwGVKIOQsjMqTKJImlzihek/view?usp=drive_link",
     certText: "ALX Gig Certificate",
     description:
-      "Selected for ALX 'Gig at a Startup' program and placed with NexaPay. Contributed as a React Native developer, delivering core frontend flows and collaborating closely with product/design. Completed the engagement with a certificate from ALX.",
+      "Selected for ALX 'Gig at a Startup' program and placed with NexaPay as a React Native developer. Delivered core frontend flows, collaborated closely with product/design, and earned an ALX certificate upon completion. The short-term placement evolved into a continued, expanded role within the company.",
     tags: ["React Native", "Expo", "TypeScript"],
   },
   {

@@ -22,7 +22,7 @@ export default function Home() {
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-block mb-4">
                 <span className="text-sm font-mono text-primary/70 uppercase tracking-wider">
-                  Senior Engineer
+                  Software Engineer
                 </span>
               </div>
               <h1
@@ -50,7 +50,7 @@ export default function Home() {
                   View Experience
                 </Link>
                 <a
-                  href="https://drive.google.com/file/d/1IuAs45Hu0ZBXW_HXTgqgTAnx0f2nC0Nc/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1WOeImt8FKZICJR6u2CmMwwvhhLSdl_pb/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-primary/30 rounded-lg font-semibold hover:border-primary hover:bg-primary/5 transition-all text-center"
