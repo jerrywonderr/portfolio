@@ -55,7 +55,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-primary/30 rounded-lg font-semibold hover:border-primary hover:bg-primary/5 transition-all text-center"
                 >
-                  Download Resume
+                  View Resume
                 </a>
               </div>
               <Socials />
