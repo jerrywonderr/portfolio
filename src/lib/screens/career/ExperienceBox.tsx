@@ -15,7 +15,7 @@ const ExperienceBox = () => {
           </p>
         </div>
         <a
-          href="https://drive.google.com/file/d/1IuAs45Hu0ZBXW_HXTgqgTAnx0f2nC0Nc/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1Z1gxbzHKImZGql8gsx-xxPj_ycB3VRlZ/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm sm:text-base text-foreground/70 hover:text-foreground hover:underline whitespace-nowrap ml-4"

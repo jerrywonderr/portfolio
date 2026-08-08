@@ -50,7 +50,7 @@ export default function Home() {
                   View Experience
                 </Link>
                 <a
-                  href="https://drive.google.com/file/d/1WOeImt8FKZICJR6u2CmMwwvhhLSdl_pb/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1Z1gxbzHKImZGql8gsx-xxPj_ycB3VRlZ/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-primary/30 rounded-lg font-semibold hover:border-primary hover:bg-primary/5 transition-all text-center"
