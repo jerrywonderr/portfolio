@@ -51,21 +51,16 @@ export const metadata: Metadata = {
     title: "Jeremiah Joseph | Software Engineer",
     description:
       "Software engineer building mobile and backend systems. React Native and Expo on the front, NestJS, PostgreSQL and Supabase behind it.",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Jeremiah Joseph - Software Engineer",
-      },
-    ],
+    // og:image is supplied by the src/app/opengraph-image.* file convention,
+    // with its alt text from opengraph-image.alt.txt. Declaring images here as
+    // well is ignored by Next, so it is left out deliberately.
   },
   twitter: {
     card: "summary_large_image",
     title: "Jeremiah Joseph | Software Engineer",
     description:
       "Software engineer building mobile and backend systems. React Native and Expo on the front, NestJS, PostgreSQL and Supabase behind it.",
-    images: ["/opengraph-image.png"],
+    // twitter:image comes from the src/app/twitter-image.* file convention.
     creator: "@jerrywonderr",
   },
   robots: {

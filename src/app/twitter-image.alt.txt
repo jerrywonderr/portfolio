@@ -1,1 +1,1 @@
-Building efficient and user-friendly web and mobile solutions, one project at a time: portfolio website of Jeremiah Joseph (jerrywonderr).
+Jeremiah Joseph — Software Engineer. Mobile and backend systems, owned end to end: React Native and Expo apps on the App Store and Google Play, with NestJS, PostgreSQL and Supabase behind them.
