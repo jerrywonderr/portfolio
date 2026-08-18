@@ -67,10 +67,10 @@ export const achievements: AchievementItem[] = [
     type: "certificate",
     title: "Google Africa Developer Scholarship",
     issuer: "Google & Andela",
-    date: "2020",
-    year: 2020,
+    date: "2021",
+    year: 2021,
     description:
-      "Selected for Google Africa Developer Scholarship program, completing intensive training in mobile and web development technologies.",
+      "Completed six months of Mobile Web Development training through the Google Africa Developer Scholarship program. Issued February 2021.",
     image: "/assets/gads-certificate.png",
     category: "learning",
   },

@@ -1,13 +1,34 @@
+export type EmploymentType =
+  | "full_time"
+  | "contract"
+  | "freelance"
+  | "internship";
+
+export const EMPLOYMENT_TYPE_LABELS: Record<EmploymentType, string> = {
+  full_time: "Full-time",
+  contract: "Contract",
+  freelance: "Freelance",
+  internship: "Internship",
+};
+
 export interface ExperienceItem {
+  slug: string;
   startDate: string;
   endDate: string;
   position: string;
-  employmentType: "full_time" | "contract";
+  employmentType: EmploymentType;
   logo?: string;
   company: string;
+  location?: string;
   link: string;
+  /** One or two sentences for compact surfaces like the homepage. */
+  summary: string;
   description: string;
   tags: string[];
+  /** A short, focused stack shown on compact cards. */
+  highlightTags?: string[];
+  /** Surfaced in the homepage "Selected Work" section. Curated, not chronological. */
+  featured?: boolean;
   certLink?: string;
   certText?: string;
   ongoing?: boolean;
@@ -18,168 +39,212 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
+    slug: "gocreatorshub",
     startDate: "September, 2025",
     endDate: "Present",
-    position: "Full-Stack Developer",
+    position: "Full Stack Engineer",
     employmentType: "full_time",
     company: "GoCreatorsHub",
+    location: "Remote",
     link: "https://gocreatorshub.com/",
+    summary:
+      "Owns the full creator-campaign pipeline for a brand–creator marketplace, from campaign creation through to Stripe Connect payouts and the admin tooling behind them.",
     description:
-      "Building a platform that connects creators to businesses. Companies discover creators and view cross-platform social metrics (followers, posts, engagement rates, etc.), then collaborate within the platform. Implementing services with Cloudflare Workers (Wrangler) + Hono, Supabase for auth and PostgreSQL, and a cross-platform scraper API for social data aggregation.",
+      "Own the full creator-campaign pipeline for a brand–creator marketplace — campaign creation, creator application, content submission, and payout workflows. Integrated Stripe Connect for creator onboarding, payouts, and transaction tracking, and built the admin-side payout tooling for authorizing, pausing, scheduling, and resolving payouts. Services run on Cloudflare Pages and Workers (Wrangler) with Hono, backed by Supabase for auth and PostgreSQL, plus a cross-platform scraper API that aggregates social metrics across creator accounts.",
     tags: [
       "TypeScript",
+      "Stripe Connect",
       "Supabase",
       "PostgreSQL",
       "Cloudflare Workers",
-      "Wrangler",
+      "Cloudflare Pages",
       "Hono",
       "Scraper API",
     ],
-  },
-  // {
-  //   startDate: "November, 2025",
-  //   endDate: "Present",
-  //   position: "Mobile Developer",
-  //   employmentType: "contract",
-  //   logo: "/assets/nexapay-logo.png",
-  //   company: "NexaPay",
-  //   link: "https://nexapay.ng/",
-  //   description:
-  //     "\n                Continuing work on the NexaPay mobile application with React Native + Expo, focusing on secure payment experiences, performance, and UI polish.",
-  //   tags: ["React Native", "Expo", "TypeScript"],
-  // },
-  {
-    startDate: "October, 2025",
-    endDate: "Present",
-    position: "Full-Stack Developer",
-    employmentType: "contract",
-    logo: "/assets/rehoboth-logo.png",
-    company: "Rehoboth",
-    link: "#",
-    description:
-      "Developing a marketplace that connects cleaners to customers. Implementing end-to-end booking and secure payments using Stripe, built with React Native + Expo and Firebase.",
-    tags: ["React Native", "Expo", "Firebase", "Stripe", "TypeScript"],
-    ongoing: true,
-    appStoreLink:
-      "https://apps.apple.com/ng/app/rehoboth-cleaning-app/id6755183375",
-    playStoreLink:
-      "https://play.google.com/store/apps/details?id=com.rehoboth.org",
+    highlightTags: ["TypeScript", "Stripe Connect", "Supabase", "Cloudflare"],
+    featured: true,
   },
   {
+    slug: "peekvibes",
     startDate: "January, 2025",
-    endDate: "October, 2025",
-    position: "Software Developer",
-    employmentType: "full_time",
+    endDate: "January, 2026",
+    position: "Software Engineer",
+    employmentType: "contract",
     logo: "/assets/peekvibes-logo.png",
     company: "Peekvibes",
+    location: "Remote",
     link: "https://peekvibes.com/",
     appStoreLink: "https://apps.apple.com/us/app/peekvibes/id6748236083",
+    summary:
+      "Largely owned system design end to end for a real-time social events platform on the iOS App Store, including a media pipeline redesign that more than doubled upload speed.",
     description:
-      "Leading development of a social events platform built with React Native + Expo where users create and join events with real-time commenting and Q&A. Architected WebSocket-based live interactions with a NestJS backend, Azure Kubernetes (AKS), CNPG for database reliability, and MinIO S3 for storage. Added end-to-end monitoring with kube-prometheus stack. Live on the App Store.",
+      "Real-time social events platform, live on the iOS App Store. Given business requirements and largely owned system design end to end — service architecture, database design, and service interactions — with weekly reviews against business goals and bugs. Designed location-based event discovery (configurable radius, ~10 miles by default) and a live commenting/Q&A system per event using WebSockets. Built a media processing pipeline on NestJS using FFmpeg for image compression and video conversion to HLS; when upload speed to the server became a bottleneck, redesigned the flow to add client-side compression before upload and move to direct multipart upload to MinIO, with MinIO triggering async processing on the backend — more than doubling upload speed. This is also where I picked up hands-on production experience with Kubernetes, Grafana, Loki, Keycloak, and MinIO.",
     tags: [
       "React Native",
       "Expo",
       "NestJS",
       "WebSocket",
-      "Azure K8s",
       "PostgreSQL",
-      "CNPG",
-      "MinIO S3",
-      "Prometheus",
+      "FFmpeg",
+      "HLS",
+      "MinIO",
+      "Azure Kubernetes (AKS)",
     ],
+    highlightTags: ["React Native", "NestJS", "WebSocket", "FFmpeg"],
+    featured: true,
   },
   {
+    slug: "rehoboth",
+    startDate: "October, 2025",
+    endDate: "December, 2025",
+    position: "Full Stack Engineer",
+    employmentType: "freelance",
+    logo: "/assets/rehoboth-logo.png",
+    company: "Rehoboth",
+    location: "Remote",
+    link: "#",
+    summary:
+      "Built the core booking-and-escrow workflow for a React Native marketplace connecting customers to professional cleaners.",
+    description:
+      "Built the core booking-and-escrow workflow for a React Native/Expo marketplace connecting customers to professional cleaners. Owned service selection, scheduling, in-app payments, and escrow release after job approval. Implemented Supabase authentication.",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Supabase",
+      "Stripe",
+      "Escrow Payments",
+    ],
+    highlightTags: ["React Native", "Expo", "Supabase", "Stripe"],
+  },
+  {
+    slug: "batelfit",
     startDate: "February, 2025",
     endDate: "October, 2025",
-    position: "Mobile Developer",
-    employmentType: "contract",
+    position: "Mobile Engineer",
+    employmentType: "freelance",
     company: "BatelFit",
+    location: "Remote",
     link: "#",
     playStoreLink:
       "https://play.google.com/store/apps/details?id=com.batelfit.app",
     appStoreLink: "https://apps.apple.com/ng/app/batel-fit-app/id6751505165",
+    summary:
+      "Built a fitness app with guided video workouts, fully localized for Hebrew (RTL), with RevenueCat in-app purchases. Live on both stores.",
     description:
-      "Building a fitness app with workout tracking and a video player for guided sessions. Using Cloudflare for image delivery and Firebase for backend services. Released on Google Play Store; working toward iOS App Store compliance.",
-    tags: ["React Native", "Expo", "Firebase", "Cloudflare", "TypeScript"],
+      "Built a fitness mobile application with guided video workouts and routines, fully localized for Hebrew (RTL). Integrated RevenueCat for iOS in-app purchases. Live on the App Store and Play Store.",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "RevenueCat",
+      "RTL Localization",
+      "Firebase",
+    ],
+    highlightTags: ["React Native", "Expo", "RevenueCat", "RTL"],
   },
   {
+    slug: "nexapay",
     startDate: "October, 2024",
     endDate: "December, 2024",
     position: "Mobile Developer",
-    employmentType: "full_time",
+    employmentType: "freelance",
     logo: "/assets/nexapay-logo.png",
     company: "NexaPay",
+    location: "Remote",
     link: "#",
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.nexapay.app&pcampaignid=web_share",
+    playStoreLink:
+      "https://play.google.com/store/apps/details?id=com.nexapay.app&pcampaignid=web_share",
     certLink:
       "https://drive.google.com/file/d/19l_gHDbZgRwGVKIOQsjMqTKJImlzihek/view?usp=drive_link",
     certText: "ALX Gig Certificate",
+    summary:
+      "Placed with NexaPay through ALX's 'Gig at a Startup' programme as a React Native developer; the short placement grew into an expanded role.",
     description:
-      "Selected for ALX 'Gig at a Startup' program and placed with NexaPay as a React Native developer. Delivered core frontend flows, collaborated closely with product/design, and earned an ALX certificate upon completion. The short-term placement evolved into a continued, expanded role within the company.",
+      "Selected for the ALX 'Gig at a Startup' programme and placed with NexaPay as a React Native developer. Delivered core frontend flows, collaborated closely with product and design, and earned an ALX certificate on completion. The short-term placement evolved into a continued, expanded role.",
     tags: ["React Native", "Expo", "TypeScript"],
+    highlightTags: ["React Native", "Expo", "TypeScript"],
+    featured: true,
   },
   {
+    slug: "smarg",
     startDate: "November, 2023",
-    endDate: "December, 2024",
-    position: "Software Developer (Mobile)",
+    endDate: "January, 2025",
+    position: "Software Developer",
     employmentType: "full_time",
     logo: "/assets/smarg-logo.png",
     company: "Smarg",
+    location: "Ibadan, Oyo State, Nigeria · Remote",
     link: "#",
-    // link: "https://usesmarg.com",
+    summary:
+      "Built core payment features for a fintech mobile app and architected the database structure behind the payment flows.",
     description:
-      "As a full-stack developer at Smarg, I contributed to the development of a fintech app by designing and implementing the core payment feature. I utilized React Native, TamaGUI, and Supabase to create an efficient and scalable codebase. My hands-on experience with database design using Supabase enhanced my expertise in developing robust and efficient databases for complex applications.",
+      "Built core payment features for a fintech mobile application using React Native and Supabase. Architected the database structure to support payment flows and core functionality. Owned frontend implementation with Tamagui UI components and Supabase backend integration.",
     tags: [
-      "TypeScript",
-      "JavaScript",
-      "Supabase",
       "React Native",
-      "RabbitMQ",
+      "TypeScript",
+      "Supabase",
+      "Tamagui",
       "Zustand",
-      "TamaGUI",
+      "PostgreSQL",
     ],
+    highlightTags: ["React Native", "Supabase", "Tamagui", "TypeScript"],
   },
   {
+    slug: "cotrust-equity",
     startDate: "June, 2023",
     endDate: "January, 2024",
-    position: "Software Developer (Mobile)",
-    employmentType: "full_time",
+    position: "Software Developer",
+    employmentType: "contract",
     logo: "/assets/cotrust-logo.jpeg",
-    company: "Cotrust Equity",
+    company: "Cotrust Equity (Paypoli)",
+    location: "Lagos State, Nigeria · Remote",
     link: "https://cotruste.com",
+    summary:
+      "Implemented ~70% of a fintech MVP in three months and cut KYC verification cost to roughly ₦130 per verification.",
     description:
-      "As part of a team, I successfully developed the MVP for a fintech mobile app within three months by implementing 70% of core functionalities. Git was used to ensure efficient collaboration and version control. Post-launch, I continued to provide support and enhancements to improve the app's performance and user satisfaction. To reduce expenses, I selected a cost-effective KYC verification service that resulted in a ₦130 cost per successful run.",
+      "Implemented ~70% of a fintech MVP within three months, including backend architecture, payment flows, and KYC integration. Evaluated third-party KYC providers and selected a solution that reduced verification costs to approximately ₦130 per verification. Provided ongoing support and enhancements for over two months post-launch. Made cost-engineering tradeoffs under early-stage resource constraints.",
     tags: [
-      "TypeScript",
-      "JavaScript",
-      "Supabase",
       "React Native",
+      "TypeScript",
+      "Supabase",
       "NativeBase",
+      "KYC Integration",
+      "Payments",
     ],
+    highlightTags: ["React Native", "Supabase", "Payments", "KYC"],
   },
   {
+    slug: "sentinel",
     startDate: "March, 2023",
     endDate: "June, 2023",
-    position: "Frontend Developer (Internship)",
-    employmentType: "full_time",
+    position: "Frontend Developer",
+    employmentType: "internship",
     logo: "/assets/sentinel-logo.jpeg",
     company: "Sentinel",
-    // link: "https://usesentinel.app",
-    link: '#',
+    location: "Ibadan, Oyo State, Nigeria · Remote",
+    link: "#",
+    summary:
+      "Built a responsive B2B landing page and reusable dashboard components for an early-stage startup.",
     description:
-      "As part of the development team at Sentinel, I improved the startup's B2B offerings by creating a responsive landing page using React and Next.js, and integrating Tally Form to effectively collect leads. Collaboration with UI/UX designers was crucial to ensure consistency with brand identity and pixel-perfect execution. To increase the maintainability and scalability of the codebase, I created reusable components for the Sentinel dashboard. By working cross-functionally with product and design teams, I iterated on features to meet business requirements.",
-    tags: ["TypeScript", "JavaScript", "Supabase", "React Native", "RabbitMQ"],
+      "Designed and implemented a responsive landing page using React and Next.js, integrating Tally Form for lead collection. Developed reusable dashboard components. Collaborated with UI/UX designers on pixel-perfect implementation.",
+    tags: ["React.js", "Next.js", "TypeScript", "JavaScript"],
+    highlightTags: ["React.js", "Next.js", "TypeScript"],
   },
   {
+    slug: "kolat-oaks-logistics",
     startDate: "June, 2022",
     endDate: "July, 2022",
     position: "Software Developer (Web)",
-    employmentType: "full_time",
+    employmentType: "freelance",
     logo: "/assets/kolat-logo.png",
     company: "Kolat OAKS Logistics",
+    location: "Remote",
     link: "https://kolat.onrender.com/",
+    summary:
+      "Built and deployed a mobile-responsive company website in a month, including domain setup, business email, and a working contact form.",
     description:
-      "In a time-efficient manner, I developed a mobile-responsive website using React, React-Bootstrap, and Node.js within a month. This project required close collaboration with stakeholders to translate their vision into a visually appealing and user-friendly UI. The website was deployed on Namecheap, including the purchase of a domain name and setting up a business email account for Kolat OAK Logistics. Furthermore, a functional Contact Us form was added to enhance user engagement. My contribution resulted in an estimated 60% improvement in their online presence, directly impacting the business's outreach.",
+      "Developed a mobile-responsive website using React, React-Bootstrap, and Node.js within a month, working closely with stakeholders to translate their vision into the UI. Deployed on Namecheap, including domain purchase and business email setup, and added a functional Contact Us form.",
     tags: [
       "React.js",
       "JavaScript",
@@ -187,5 +252,6 @@ export const experiences: ExperienceItem[] = [
       "Express.js",
       "React Bootstrap",
     ],
+    highlightTags: ["React.js", "Node.js", "Express.js"],
   },
 ];

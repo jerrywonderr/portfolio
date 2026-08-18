@@ -11,7 +11,7 @@ const HeadShot = () => {
           width={200}
           height={200}
           className="rounded-full h-40 w-40 sm:h-48 sm:w-48 object-cover relative border-4 border-border shadow-lg"
-          alt="Jeremiah Joseph - Senior Software Engineer"
+          alt="Jeremiah Joseph - Software Engineer"
           priority
         />
       </div>

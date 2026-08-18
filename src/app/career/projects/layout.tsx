@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects | Career | Jeremiah Joseph",
   description:
-    "Personal projects and open-source contributions by Jeremiah Joseph. Explore innovative applications built with React Native, Next.js, TypeScript, and modern web technologies.",
+    "Selected work by Jeremiah Joseph outside of employment, including a conference attendance platform built with Next.js and Supabase, and a Hedera hackathon prototype.",
 };
 
 export default function ProjectsLayout({

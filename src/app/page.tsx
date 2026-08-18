@@ -13,40 +13,43 @@ export default function Home() {
   return (
     <DottedScreen>
       <main itemScope itemType="https://schema.org/Person">
-        <section className="relative max-w-6xl mx-auto px-4 py-20 sm:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl -z-10" />
-          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
-            <div className="flex-shrink-0 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl -z-10" />
+        <section className="relative mx-auto max-w-6xl overflow-hidden px-4 pb-8 pt-20 sm:pb-12 sm:pt-28">
+          <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+          <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-16">
+            <div className="relative flex-shrink-0">
+              <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" />
               <HeadShot />
             </div>
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-block mb-4">
-                <span className="text-sm font-mono text-primary/70 uppercase tracking-wider">
-                  Software Engineer
+              <div className="mb-4 inline-block">
+                <span className="font-mono text-sm uppercase tracking-wider text-primary/70">
+                  React Native · NestJS · PostgreSQL
                 </span>
               </div>
               <h1
                 itemProp="name"
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4 text-foreground"
+                className="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
               >
                 Jeremiah Joseph
               </h1>
               <p
                 itemProp="jobTitle"
-                className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6"
+                className="mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl"
               >
-                Full-Stack Architect
+                Software Engineer
               </p>
-              <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
-                Building scalable applications and infrastructure. Leading
-                development of production systems with expertise in React
-                Native, TypeScript, cloud platforms, and distributed systems.
+              <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-foreground/70 lg:mx-0">
+                I own mobile and backend systems end to end. At GoCreatorsHub
+                that&apos;s the full creator-campaign pipeline, from campaign
+                creation through to Stripe Connect payouts. Before that I led
+                system design for Peekvibes — a real-time social events platform
+                on the iOS App Store — where redesigning the media pipeline more
+                than doubled upload speed.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
                 <Link
                   href="/career/experience"
-                  className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-primaryForeground rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all text-center"
+                  className="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 text-center font-semibold text-primaryForeground transition-all hover:scale-105 hover:shadow-lg"
                 >
                   View Experience
                 </Link>
@@ -54,7 +57,7 @@ export default function Home() {
                   href={RESUME_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border-2 border-primary/30 rounded-lg font-semibold hover:border-primary hover:bg-primary/5 transition-all text-center"
+                  className="rounded-lg border-2 border-primary/30 px-6 py-3 text-center font-semibold transition-all hover:border-primary hover:bg-primary/5"
                 >
                   View Resume
                 </a>
@@ -68,36 +71,67 @@ export default function Home() {
 
         <SkillsSection />
 
-        <section className="max-w-6xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Recent Work
+        <section className="mx-auto max-w-6xl px-4 py-16">
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold text-foreground sm:text-4xl">
+              Selected Work
             </h2>
-            <p className="text-foreground/70 text-lg mb-8">
-              Latest professional engagements and projects
+            <p className="mb-8 text-lg text-foreground/70">
+              Three engagements worth a closer look
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <Link
-                href="/career/experience"
-                className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary border border-border rounded-lg hover:border-primary transition-colors"
-              >
-                View All Experience →
-              </Link>
-              <Link
-                href="/career/projects"
-                className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary border border-border rounded-lg hover:border-primary transition-colors"
-              >
-                View All Projects →
-              </Link>
-              <Link
-                href="/career/certificates"
-                className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary border border-border rounded-lg hover:border-primary transition-colors"
-              >
-                Explore Journey →
-              </Link>
-            </div>
           </div>
           <ProjectCards />
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/career/experience"
+              className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground/70 transition-colors hover:border-primary hover:text-primary"
+            >
+              All Experience →
+            </Link>
+            <Link
+              href="/career/projects"
+              className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground/70 transition-colors hover:border-primary hover:text-primary"
+            >
+              Projects →
+            </Link>
+            <Link
+              href="/career/certificates"
+              className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground/70 transition-colors hover:border-primary hover:text-primary"
+            >
+              Achievements →
+            </Link>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 pb-24">
+          <div className="rounded-3xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-10 text-center">
+            <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl">
+              Get in touch
+            </h2>
+            <p className="mx-auto mb-6 max-w-xl text-foreground/70">
+              Open to mobile and backend engineering roles. Email is the fastest
+              route.
+            </p>
+            <div className="mb-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="mailto:josephjeremiah2001@gmail.com"
+                className="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 font-semibold text-primaryForeground transition-all hover:scale-105 hover:shadow-lg"
+              >
+                josephjeremiah2001@gmail.com
+              </a>
+              <a
+                href={RESUME_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border-2 border-primary/30 px-6 py-3 font-semibold transition-all hover:border-primary hover:bg-primary/5"
+              >
+                View Resume
+              </a>
+            </div>
+            <div className="flex justify-center">
+              <Socials />
+            </div>
+          </div>
         </section>
       </main>
     </DottedScreen>

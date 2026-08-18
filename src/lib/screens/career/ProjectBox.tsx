@@ -9,7 +9,7 @@ const ProjectBox = () => {
           Projects
         </h2>
         <p className="text-foreground/70 text-sm sm:text-base">
-          Personal projects and open-source contributions
+          Selected work outside of employment
         </p>
       </div>
       <div className="flex flex-col gap-8">

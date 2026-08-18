@@ -2,13 +2,26 @@
 
 import DottedScreen from "@/lib/components/DottedScreen";
 import ExperienceCard from "@/lib/screens/career/ExperienceCard";
-import { experiences } from "@/lib/screens/career/data/experiences";
+import {
+  EMPLOYMENT_TYPE_LABELS,
+  experiences,
+  type EmploymentType,
+} from "@/lib/screens/career/data/experiences";
 import { useState } from "react";
 
+type Filter = "all" | EmploymentType;
+
+// Only offer a filter for types that actually appear in the data.
+const availableTypes = (
+  Object.keys(EMPLOYMENT_TYPE_LABELS) as EmploymentType[]
+).filter((type) => experiences.some((exp) => exp.employmentType === type));
+
+const filters: Filter[] = ["all", ...availableTypes];
+
 export default function ExperiencePage() {
-  const [filter, setFilter] = useState<"all" | "full_time" | "contract">("all");
-  
-  const filteredExperiences = experiences.filter((exp) => 
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const filteredExperiences = experiences.filter((exp) =>
     filter === "all" ? true : exp.employmentType === filter
   );
 
@@ -20,10 +33,10 @@ export default function ExperiencePage() {
             Experience
           </h1>
           <p className="text-lg text-foreground/70 mb-6">
-            Full-time positions and contract engagements
+            Full-time roles, contracts, and freelance engagements
           </p>
           <div className="flex gap-3 flex-wrap">
-            {(["all", "full_time", "contract"] as const).map((f) => (
+            {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -33,14 +46,14 @@ export default function ExperiencePage() {
                     : "bg-muted text-foreground/70 hover:bg-muted/80"
                 }`}
               >
-                {f === "all" ? "All" : f === "full_time" ? "Full-Time" : "Contracts"}
+                {f === "all" ? "All" : EMPLOYMENT_TYPE_LABELS[f]}
               </button>
             ))}
           </div>
         </div>
         <div className="flex flex-col gap-8 relative ml-4 border-l-2 border-primary/30 pl-8">
-          {filteredExperiences.map((exp, idx) => (
-            <ExperienceCard key={`exp-${idx}`} {...exp} />
+          {filteredExperiences.map((exp) => (
+            <ExperienceCard key={exp.slug} {...exp} />
           ))}
         </div>
       </div>

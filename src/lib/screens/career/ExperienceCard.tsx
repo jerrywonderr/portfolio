@@ -4,8 +4,15 @@ import Image from "next/image";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { RiArrowRightUpFill } from "react-icons/ri";
 import Tag from "./Tag";
+import {
+  EMPLOYMENT_TYPE_LABELS,
+  type EmploymentType,
+} from "./data/experiences";
 
 interface IExperienceCard {
+  slug?: string;
+  employmentType?: EmploymentType;
+  location?: string;
   startDate: string;
   endDate: string;
   position: string;
@@ -24,6 +31,9 @@ interface IExperienceCard {
 }
 
 const ExperienceCard = ({
+  slug,
+  employmentType,
+  location,
   startDate,
   endDate,
   position,
@@ -42,10 +52,11 @@ const ExperienceCard = ({
 }: IExperienceCard) => {
   return (
     <motion.div
+      id={slug}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="group relative"
+      className="group relative scroll-mt-24"
     >
       {showDots && (
         <div className="absolute -left-[3.35rem] top-8 flex items-center">
@@ -62,10 +73,20 @@ const ExperienceCard = ({
         )}
         <div className="relative flex flex-col gap-5">
           {!hideDates && (
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-xs text-foreground/50 bg-muted px-3 py-1 rounded-full">
                 {startDate} → {endDate}
               </span>
+              {employmentType && (
+                <span className="font-mono text-xs text-foreground/50 bg-muted px-3 py-1 rounded-full">
+                  {EMPLOYMENT_TYPE_LABELS[employmentType]}
+                </span>
+              )}
+              {location && (
+                <span className="font-mono text-xs text-foreground/50 bg-muted px-3 py-1 rounded-full">
+                  {location}
+                </span>
+              )}
             </div>
           )}
           <div className="flex flex-col gap-3">

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Experience | Career | Jeremiah Joseph",
   description:
-    "Professional experience and contract engagements. Full-stack development roles at GoCreatorsHub, Peekvibes, NexaPay, Smarg, and other leading companies. Expertise in React Native, TypeScript, NestJS, and cloud infrastructure.",
+    "Full-time roles, contracts and freelance engagements: GoCreatorsHub, Peekvibes, Rehoboth, BatelFit, NexaPay, Smarg, Cotrust Equity, Sentinel and Kolat OAKS Logistics. React Native, TypeScript, NestJS, PostgreSQL and Supabase.",
 };
 
 export default function ExperienceLayout({

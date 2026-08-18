@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Jeremiah Joseph - Portfolio",
     short_name: "JJ Portfolio",
     description:
-      "Portfolio of Jeremiah Joseph, Senior Software Engineer specializing in full-stack development, infrastructure architecture, and production-scale applications.",
+      "Portfolio of Jeremiah Joseph, software engineer building mobile and backend systems.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0a",

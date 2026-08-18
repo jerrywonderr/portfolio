@@ -1,86 +1,64 @@
 import { experiences } from "@/lib/screens/career/data/experiences";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
+
+/**
+ * Every entry here is a link a visitor can click and verify.
+ * Deliberately no derived "X+ years" / "100% full-stack" counters.
+ */
+const shipped = experiences.filter(
+  (exp) => exp.appStoreLink || exp.playStoreLink
+);
 
 const KeyAchievements = () => {
-  const appsWithStoreLinks = experiences.filter(
-    (exp) => exp.appStoreLink || exp.playStoreLink
-  ).reduce((acc, exp) => exp.appStoreLink && exp.playStoreLink ? acc + 2 : acc + 1, 0);
-
-  const parseDate = (dateStr: string): Date => {
-    if (dateStr === "Present") return new Date();
-    const [month, year] = dateStr.split(", ");
-    const months: Record<string, number> = {
-      January: 0,
-      February: 1,
-      March: 2,
-      April: 3,
-      May: 4,
-      June: 5,
-      July: 6,
-      August: 7,
-      September: 8,
-      October: 9,
-      November: 10,
-      December: 11,
-    };
-    return new Date(parseInt(year), months[month], 1);
-  };
-
-  const earliestStartDate = experiences.reduce((earliest, exp) => {
-    const start = parseDate(exp.startDate);
-    return !earliest || start < earliest ? start : earliest;
-  }, null as Date | null);
-
-  const yearsOfExperience = earliestStartDate
-    ? Math.floor(
-      (new Date().getTime() - earliestStartDate.getTime()) /
-      (1000 * 60 * 60 * 24 * 365.25)
-    )
-    : 0;
-
-  const achievements = [
-    {
-      metric: `${appsWithStoreLinks}+`,
-      label: "Production Apps",
-      description: "Apps published on App Store and Play Store",
-    },
-    {
-      metric: `${yearsOfExperience}+`,
-      label: "Years Experience",
-      description: "Building scalable production systems",
-    },
-    {
-      metric: "100%",
-      label: "Full-Stack",
-      description: "Mobile, web, backend, and infrastructure",
-    },
-  ];
-
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
-      <div className="max-w-6xl mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-foreground">
-            Key Achievements
+      <div className="relative mx-auto max-w-6xl px-4">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+            Shipped and live
           </h2>
-          <p className="text-foreground/70 text-lg">
-            Building products that scale
+          <p className="text-lg text-foreground/70">
+            Production apps on the App Store and Google Play
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {achievements.map((achievement, idx) => (
+        {/* Flex + justify-center rather than a fixed grid: the number of shipped
+            apps changes as roles come and go, and a grid leaves a lopsided gap
+            whenever the count doesn't divide evenly into the column count. */}
+        <div className="flex flex-wrap justify-center gap-4">
+          {shipped.map((exp) => (
             <div
-              key={idx}
-              className="group relative text-center bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl p-8 hover:border-primary/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              key={exp.slug}
+              className="flex w-full flex-col rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl sm:w-[280px]"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-                {achievement.metric}
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                {achievement.label}
+              <h3 className="mb-1 text-lg font-bold text-foreground">
+                {exp.company}
               </h3>
-              <p className="text-foreground/70">{achievement.description}</p>
+              <p className="mb-4 flex-1 text-sm text-foreground/60">
+                {exp.position}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {exp.appStoreLink && (
+                  <a
+                    href={exp.appStoreLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 rounded-lg bg-foreground px-2.5 py-1.5 text-xs font-semibold text-background transition-opacity hover:opacity-90"
+                  >
+                    <FaApple size={11} /> App Store
+                  </a>
+                )}
+                {exp.playStoreLink && (
+                  <a
+                    href={exp.playStoreLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 rounded-lg bg-foreground px-2.5 py-1.5 text-xs font-semibold text-background transition-opacity hover:opacity-90"
+                  >
+                    <FaGooglePlay size={11} /> Play Store
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

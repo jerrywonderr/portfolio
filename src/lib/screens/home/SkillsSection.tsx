@@ -1,110 +1,69 @@
 import { motion } from "framer-motion";
-import { experiences } from "@/lib/screens/career/data/experiences";
-import { projects } from "@/lib/screens/career/data/projects";
-import Tag from "@/lib/screens/career/Tag";
+import Link from "next/link";
 
-const SkillsSection = () => {
-  const allTags = [
-    ...experiences.flatMap((exp) => exp.tags),
-    ...projects.flatMap((proj) => proj.tags),
-  ];
-  const uniqueTags = Array.from(new Set(allTags));
-
-  const categories: Record<string, string[]> = {
-    "Languages": ["TypeScript", "JavaScript"],
-    "Frontend": [
-      "React Native",
-      "Expo",
-      "React.js",
-      "React",
-      "Next.js",
-      "TamaGUI",
-      "NativeBase",
-      "React Bootstrap",
-    ],
-    "Backend": [
+/**
+ * Curated by hand, not derived from every tag in the data files.
+ *
+ * The last group is deliberately separated: these are tools encountered while
+ * shipping production work, not areas of claimed depth. Keep that distinction —
+ * it is the difference between a defensible portfolio and an inflated one.
+ */
+const skillGroups: { title: string; skills: string[] }[] = [
+  {
+    title: "Mobile",
+    skills: ["React Native", "Expo", "TypeScript"],
+  },
+  {
+    title: "Backend",
+    skills: [
       "NestJS",
       "Node.js",
-      "Express.js",
-      "Hono",
-      "Cloudflare Workers",
-      "Wrangler",
-    ],
-    "Databases & Storage": [
       "PostgreSQL",
       "Supabase",
-      "MySQL",
-      "CNPG",
-      "MinIO S3",
-      "Firebase",
+      "Cloudflare Workers",
     ],
-    "Infrastructure & DevOps": [
-      "Azure K8s",
-      "Kubernetes",
-      "Prometheus",
-      "RabbitMQ",
-      "Cloudflare",
-    ],
-    "Other": ["WebSocket", "Stripe", "Web3", "Blockchain", "Smart Contracts"],
-  };
+  },
+  {
+    title: "Worked with in production",
+    skills: ["Azure Kubernetes", "Grafana", "Loki", "Keycloak", "MinIO"],
+  },
+];
 
-  const categorizedSkills: Record<string, string[]> = {};
-  const uncategorized: string[] = [];
-
-  uniqueTags.forEach((tag) => {
-    let found = false;
-    for (const [category, skills] of Object.entries(categories)) {
-      if (skills.includes(tag)) {
-        if (!categorizedSkills[category]) {
-          categorizedSkills[category] = [];
-        }
-        categorizedSkills[category].push(tag);
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      uncategorized.push(tag);
-    }
-  });
-
-  if (uncategorized.length > 0) {
-    categorizedSkills["Other"] = [
-      ...(categorizedSkills["Other"] || []),
-      ...uncategorized,
-    ];
-  }
-
+const SkillsSection = () => {
   return (
     <section className="py-16">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-foreground">
-            Technologies & Skills
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+            Tools of the trade
           </h2>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-            A comprehensive toolkit for building scalable, production-ready applications
+          <p className="mx-auto max-w-2xl text-lg text-foreground/70">
+            Full per-role stacks live on the{" "}
+            <Link
+              href="/career/experience"
+              className="text-primary underline underline-offset-4 hover:text-accent"
+            >
+              experience page
+            </Link>
+            .
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(categorizedSkills).map(([category, skills], idx) => (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {skillGroups.map((group, idx) => (
             <motion.div
-              key={category}
+              key={group.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="flex flex-col rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-6"
             >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/10 to-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              <h3 className="text-lg font-bold text-foreground mb-4 font-mono relative z-10">
-                {category}
+              <h3 className="mb-3 font-mono text-sm font-bold uppercase tracking-wider text-foreground/60">
+                {group.title}
               </h3>
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {skills.map((skill) => (
-                  <Tag key={skill}>{skill}</Tag>
-                ))}
-              </div>
+              <p className="text-base leading-relaxed text-foreground">
+                {group.skills.join(" · ")}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -114,4 +73,3 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
-

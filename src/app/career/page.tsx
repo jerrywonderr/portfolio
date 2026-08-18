@@ -13,7 +13,7 @@ const careerSections = [
   },
   {
     title: "Projects",
-    description: "Personal projects and open-source contributions",
+    description: "Selected work outside of employment",
     href: "/career/projects",
     icon: FaLayerGroup,
   },

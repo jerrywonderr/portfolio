@@ -5,9 +5,9 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Jeremiah Joseph",
-    jobTitle: "Senior Software Engineer",
+    jobTitle: "Software Engineer",
     description:
-      "Senior Software Engineer specializing in full-stack development, infrastructure architecture, and production-scale applications.",
+      "Software engineer building mobile and backend systems with React Native, Expo, NestJS, PostgreSQL and Supabase.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://jerrywonder.dev",
     sameAs: [
       "https://github.com/jerrywonderr",
@@ -17,7 +17,7 @@ const StructuredData = () => {
       "React Native",
       "TypeScript",
       "Full-Stack Development",
-      "Cloud Infrastructure",
+      "Stripe Connect",
       "Node.js",
       "Next.js",
       "NestJS",
@@ -37,11 +37,11 @@ const StructuredData = () => {
     "@type": "ProfessionalService",
     name: "Jeremiah Joseph - Software Engineering Services",
     description:
-      "Senior Software Engineer offering full-stack development, mobile app development, and cloud infrastructure services.",
+      "Software engineer offering mobile app development, backend development, and cloud infrastructure work.",
     provider: {
       "@type": "Person",
       name: "Jeremiah Joseph",
-      jobTitle: "Senior Software Engineer",
+      jobTitle: "Software Engineer",
     },
     address: {
       "@type": "PostalAddress",
@@ -55,7 +55,7 @@ const StructuredData = () => {
       "Mobile App Development",
       "Web Development",
       "Backend Development",
-      "Cloud Infrastructure",
+      "Stripe Connect",
     ],
     image: process.env.NEXT_PUBLIC_SITE_URL
       ? `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-image.jpeg`

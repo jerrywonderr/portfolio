@@ -12,7 +12,7 @@ const ExperienceBox = () => {
             Experience
           </h2>
           <p className="text-foreground/70 text-sm sm:text-base">
-            Full-time positions and key roles
+            Full-time positions
           </p>
         </div>
         <a
