@@ -1,28 +1,16 @@
-// Download link rendered as a simple text anchor below
-import { RESUME_LINK } from "@/lib/utils/constants";
 import ExperienceCard from "./ExperienceCard";
 import { ExperienceItem, experiences } from "./data/experiences";
 
 const ExperienceBox = () => {
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
-            Experience
-          </h2>
-          <p className="text-foreground/70 text-sm sm:text-base">
-            Full-time positions
-          </p>
-        </div>
-        <a
-          href={RESUME_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm sm:text-base text-foreground/70 hover:text-foreground hover:underline whitespace-nowrap ml-4"
-        >
-          Download Resume
-        </a>
+      <div className="mb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+          Experience
+        </h2>
+        <p className="text-foreground/70 text-sm sm:text-base">
+          Full-time positions
+        </p>
       </div>
       <div className="flex flex-col gap-8 relative ml-4 border-l-2 border-border pl-8">
         {experiences

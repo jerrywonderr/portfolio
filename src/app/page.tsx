@@ -6,7 +6,6 @@ import KeyAchievements from "@/lib/screens/home/KeyAchievements";
 import ProjectCards from "@/lib/screens/home/ProjectCards";
 import SkillsSection from "@/lib/screens/home/SkillsSection";
 import Socials from "@/lib/screens/home/Socials";
-import { RESUME_LINK } from "@/lib/utils/constants";
 import Link from "next/link";
 
 export default function Home() {
@@ -46,21 +45,13 @@ export default function Home() {
                 on the iOS App Store — where redesigning the media pipeline more
                 than doubled upload speed.
               </p>
-              <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+              <div className="mb-8 flex justify-center lg:justify-start">
                 <Link
                   href="/career/experience"
                   className="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 text-center font-semibold text-primaryForeground transition-all hover:scale-105 hover:shadow-lg"
                 >
                   View Experience
                 </Link>
-                <a
-                  href={RESUME_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg border-2 border-primary/30 px-6 py-3 text-center font-semibold transition-all hover:border-primary hover:bg-primary/5"
-                >
-                  View Resume
-                </a>
               </div>
               <Socials />
             </div>
@@ -112,20 +103,12 @@ export default function Home() {
               Open to mobile and backend engineering roles. Email is the fastest
               route.
             </p>
-            <div className="mb-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mb-6 flex justify-center">
               <a
                 href="mailto:josephjeremiah2001@gmail.com"
                 className="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 font-semibold text-primaryForeground transition-all hover:scale-105 hover:shadow-lg"
               >
                 josephjeremiah2001@gmail.com
-              </a>
-              <a
-                href={RESUME_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border-2 border-primary/30 px-6 py-3 font-semibold transition-all hover:border-primary hover:bg-primary/5"
-              >
-                View Resume
               </a>
             </div>
             <div className="flex justify-center">
