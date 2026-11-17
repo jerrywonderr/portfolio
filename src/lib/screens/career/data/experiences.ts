@@ -41,7 +41,7 @@ export const experiences: ExperienceItem[] = [
   {
     slug: "gocreatorshub",
     startDate: "September, 2025",
-    endDate: "Present",
+    endDate: "May, 2026",
     position: "Full Stack Engineer",
     employmentType: "full_time",
     company: "GoCreatorsHub",

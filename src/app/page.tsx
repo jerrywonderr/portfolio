@@ -38,7 +38,7 @@ export default function Home() {
                 Software Engineer
               </p>
               <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-foreground/70 lg:mx-0">
-                I own mobile and backend systems end to end. At GoCreatorsHub
+                I own web, mobile, and backend systems end to end. At GoCreatorsHub
                 that&apos;s the full creator-campaign pipeline, from campaign
                 creation through to Stripe Connect payouts. Before that I led
                 system design for Peekvibes — a real-time social events platform
